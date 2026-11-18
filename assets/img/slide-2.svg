@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img" aria-label="Suasana kelas belajar">
+  <defs>
+    <linearGradient id="s2-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF4EE"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="340" fill="url(#s2-bg)" rx="18"/>
+  <!-- papan tulis & guru -->
+  <rect x="60" y="50" width="230" height="140" rx="10" fill="#1B5E43"/>
+  <rect x="74" y="64" width="202" height="112" rx="6" fill="#2E7D57"/>
+  <text x="175" y="110" font-family="Arial" font-size="22" fill="#fff" text-anchor="middle" font-weight="bold">A B C</text>
+  <text x="175" y="145" font-family="Arial" font-size="18" fill="#BFE3D0" text-anchor="middle">1 2 3</text>
+  <!-- guru -->
+  <g transform="translate(360,120)">
+    <circle cx="0" cy="-58" r="18" fill="#F2C9A8"/>
+    <path d="M-15 -66 C-14 -50 -8 -44 0 -44 C20 -44 26 -56 26 -66 C22 -76 8 -72 0 -72 C-8 -72 -14 -74 -15 -66 Z" fill="#3B3B3B"/>
+    <rect x="-22" y="-42" width="44" height="52" rx="14" fill="#2E7D57"/>
+    <path d="M14 -30 C36 -14 40 6 38 26" stroke="#2E7D57" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- meja murid -->
+  <g>
+    <rect x="60" y="240" width="90" height="12" rx="4" fill="#D9A05B"/>
+    <rect x="68" y="252" width="8" height="40" fill="#8A6A4B"/>
+    <rect x="134" y="252" width="8" height="40" fill="#8A6A4B"/>
+    <rect x="140" y="216" width="40" height="26" rx="4" fill="#F2B33D"/>
+    <rect x="230" y="240" width="90" height="12" rx="4" fill="#D9A05B"/>
+    <rect x="238" y="252" width="8" height="40" fill="#8A6A4B"/>
+    <rect x="304" y="252" width="8" height="40" fill="#8A6A4B"/>
+    <rect x="310" y="216" width="40" height="26" rx="4" fill="#4CAF7D"/>
+  </g>
+  <!-- jendela -->
+  <rect x="452" y="60" width="38" height="46" rx="4" fill="#BFE3EF" stroke="#1B5E43" stroke-width="2.4"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img" aria-label="Upacara bendera dan olahraga bersama">
+  <defs>
+    <linearGradient id="s5-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8F4EC"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="340" fill="url(#s5-bg)" rx="18"/>
+  <!-- matahari -->
+  <circle cx="70" cy="60" r="24" fill="#F2B33D"/>
+  <!-- tiang bendera -->
+  <g>
+    <rect x="250" y="60" width="5" height="200" fill="#9AA6A0"/>
+    <path d="M255 62 L320 76 L255 104 Z" fill="#E23B3B"/>
+    <path d="M255 84 L320 98 L255 126 Z" fill="#FFFFFF" stroke="#DDD" stroke-width="1"/>
+    <circle cx="252" cy="56" r="6" fill="#F2B33D"/>
+  </g>
+  <!-- barisan anak upacara -->
+  <g transform="translate(120,220)">
+    <circle cx="0" cy="0" r="13" fill="#F5CBA8"/>
+    <path d="M-13 -4 C-13 -16 13 -16 13 -4 C13 -9 8 -11 0 -11 C-8 -11 -13 -9 -13 -4 Z" fill="#1B1B1B"/>
+    <rect x="-12" y="13" width="24" height="42" rx="9" fill="#FFFFFF" stroke="#D5DED9"/>
+    <rect x="-2" y="13" width="4" height="20" fill="#E23B3B"/>
+  </g>
+  <g transform="translate(170,220)">
+    <circle cx="0" cy="0" r="13" fill="#F5CBA8"/>
+    <path d="M-13 -4 C-13 -16 13 -16 13 -4 C13 -9 8 -11 0 -11 C-8 -11 -13 -9 -13 -4 Z" fill="#2E2E2E"/>
+    <rect x="-12" y="13" width="24" height="42" rx="9" fill="#FFFFFF" stroke="#D5DED9"/>
+    <rect x="-2" y="13" width="4" height="20" fill="#E23B3B"/>
+  </g>
+  <g transform="translate(360,220)">
+    <circle cx="0" cy="0" r="13" fill="#F5CBA8"/>
+    <path d="M-13 -4 C-13 -16 13 -16 13 -4 C13 -9 8 -11 0 -11 C-8 -11 -13 -9 -13 -4 Z" fill="#3B2A1A"/>
+    <rect x="-12" y="13" width="24" height="42" rx="9" fill="#FFFFFF" stroke="#D5DED9"/>
+    <rect x="-2" y="13" width="4" height="20" fill="#E23B3B"/>
+  </g>
+  <g transform="translate(410,220)">
+    <circle cx="0" cy="0" r="13" fill="#F5CBA8"/>
+    <path d="M-13 -4 C-13 -16 13 -16 13 -4 C13 -9 8 -11 0 -11 C-8 -11 -13 -9 -13 -4 Z" fill="#1B1B1B"/>
+    <rect x="-12" y="13" width="24" height="42" rx="9" fill="#FFFFFF" stroke="#D5DED9"/>
+    <rect x="-2" y="13" width="4" height="20" fill="#E23B3B"/>
+  </g>
+  <!-- pohon -->
+  <g>
+    <rect x="60" y="230" width="10" height="40" fill="#8A6A4B"/>
+    <circle cx="65" cy="215" r="30" fill="#4CAF7D"/>
+    <circle cx="45" cy="235" r="18" fill="#57BB85"/>
+  </g>
+  <g>
+    <rect x="462" y="238" width="9" height="34" fill="#8A6A4B"/>
+    <circle cx="466" cy="226" r="24" fill="#4CAF7D"/>
+  </g>
+  <rect x="0" y="298" width="520" height="42" fill="#DFF0E5"/>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img" aria-label="Kegiatan pramuka">
+  <defs>
+    <linearGradient id="s3-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4F2E9"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="340" fill="url(#s3-bg)" rx="18"/>
+  <!-- tenda pramuka -->
+  <g>
+    <path d="M110 210 L200 110 L290 210 Z" fill="#8B5E3C"/>
+    <path d="M110 210 L200 110 L200 210 Z" fill="#7A4F32"/>
+    <path d="M200 210 L200 155 L245 210 Z" fill="#A9764C"/>
+    <rect x="192" y="150" width="16" height="60" fill="#5C3A22" transform="rotate(8 200 180)"/>
+  </g>
+  <!-- api unggun -->
+  <g>
+    <rect x="330" y="216" width="90" height="8" rx="4" fill="#8A6A4B"/>
+    <rect x="336" y="228" width="78" height="8" rx="4" fill="#7A5A3B" transform="rotate(4 375 232)"/>
+    <path d="M375 210 C362 192 368 178 375 162 C382 178 388 192 375 210 Z" fill="#F2B33D"/>
+    <path d="M375 204 C368 192 371 182 375 172 C379 182 382 192 375 204 Z" fill="#E23B3B"/>
+  </g>
+  <!-- bendera merah putih pramuka -->
+  <g>
+    <rect x="440" y="120" width="4" height="100" fill="#9AA6A0"/>
+    <rect x="444" y="122" width="34" height="12" fill="#E23B3B"/>
+    <rect x="444" y="134" width="34" height="12" fill="#fff" stroke="#DDD"/>
+  </g>
+  <!-- anak pramuka -->
+  <g transform="translate(70,190)">
+    <circle cx="0" cy="0" r="14" fill="#F5CBA8"/>
+    <path d="M-14 -4 C-14 -18 14 -18 14 -4 C14 -9 8 -12 0 -12 C-8 -12 -14 -9 -14 -4 Z" fill="#5A3825"/>
+    <rect x="-13" y="14" width="26" height="40" rx="10" fill="#8B5E3C"/>
+    <circle cx="0" cy="-20" r="7" fill="#8B5E3C"/>
+  </g>
+  <g transform="translate(320,196)">
+    <circle cx="0" cy="0" r="13" fill="#F5CBA8"/>
+    <path d="M-13 -4 C-13 -16 13 -16 13 -4 C13 -9 8 -11 0 -11 C-8 -11 -13 -9 -13 -4 Z" fill="#1B1B1B"/>
+    <rect x="-12" y="13" width="24" height="38" rx="10" fill="#7A4F32"/>
+  </g>
+  <!-- tanah & semak -->
+  <rect x="0" y="300" width="520" height="40" fill="#DFF0E5"/>
+  <circle cx="60" cy="300" r="18" fill="#4CAF7D"/>
+  <circle cx="480" cy="298" r="22" fill="#57BB85"/>
+  <circle cx="250" cy="304" r="14" fill="#4CAF7D"/>
+</svg>

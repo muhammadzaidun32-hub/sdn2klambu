@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img" aria-label="Perpustakaan pojok baca">
+  <defs>
+    <linearGradient id="s4-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDF6E7"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="340" fill="url(#s4-bg)" rx="18"/>
+  <!-- rak buku -->
+  <g>
+    <rect x="60" y="80" width="150" height="180" rx="8" fill="#8B5E3C"/>
+    <rect x="70" y="92" width="130" height="60" rx="4" fill="#fff"/>
+    <rect x="78" y="100" width="18" height="50" fill="#E23B3B"/>
+    <rect x="98" y="106" width="18" height="44" fill="#2E7D57"/>
+    <rect x="118" y="98" width="18" height="52" fill="#F2B33D"/>
+    <rect x="138" y="108" width="18" height="42" fill="#2E8B57"/>
+    <rect x="158" y="102" width="18" height="48" fill="#4A6FA5"/>
+    <rect x="70" y="168" width="130" height="60" rx="4" fill="#fff"/>
+    <rect x="80" y="176" width="18" height="50" fill="#4CAF7D"/>
+    <rect x="102" y="182" width="18" height="44" fill="#F2B33D"/>
+    <rect x="124" y="174" width="18" height="52" fill="#E23B3B"/>
+    <rect x="146" y="184" width="18" height="42" fill="#4A6FA5"/>
+    <rect x="168" y="178" width="18" height="48" fill="#2E7D57"/>
+  </g>
+  <!-- anak membaca buku besar -->
+  <g transform="translate(300,150)">
+    <circle cx="0" cy="-40" r="24" fill="#F5CBA8"/>
+    <path d="M-24 -46 C-24 -70 24 -70 24 -46 C24 -54 14 -58 0 -58 C-14 -58 -24 -54 -24 -46 Z" fill="#1B5E43"/>
+    <rect x="-26" y="-14" width="52" height="66" rx="16" fill="#2E8B57"/>
+    <!-- buku terbuka -->
+    <path d="M-50 30 C-30 18 -6 18 0 30 C6 18 30 18 50 30 L50 64 C30 54 6 54 0 64 C-6 54 -30 54 -50 64 Z" fill="#fff" stroke="#D5DED9" stroke-width="3"/>
+    <path d="M0 30 L0 64" stroke="#D5DED9" stroke-width="3"/>
+  </g>
+  <!-- lampu gantung -->
+  <g>
+    <line x1="452" y1="0" x2="452" y2="60" stroke="#9AA6A0" stroke-width="3"/>
+    <path d="M432 60 L472 60 L462 84 L442 84 Z" fill="#F2B33D"/>
+    <circle cx="452" cy="92" r="6" fill="#FFE9B0"/>
+  </g>
+  <rect x="0" y="300" width="520" height="40" fill="#F3ECDA"/>
+</svg>
