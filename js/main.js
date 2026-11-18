@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  // ======== Hero slider (beranda) ========
-  const slider = document.getElementById('hero-slider');
-  if (slider) {
-    const track = slider.querySelector('.hs-track');
-    const dotsWrap = slider.querySelector('#hs-dots');
+  // ======== Hero slider sebagai latar belakang ========
+  const hero = document.getElementById('hero-slider');
+  if (hero) {
+    const track = hero.querySelector('.hs-track');
+    const dotsWrap = hero.querySelector('#hs-dots');
     const slides = track ? [...track.querySelectorAll('img')] : [];
     let idx = 0, timer = null;
 
@@ -53,13 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const berhenti = () => clearInterval(timer);
       const restart = () => { berhenti(); mulai(); };
       mulai();
-      // jeda autoplay saat kursor di atas slider
-      slider.addEventListener('mouseenter', berhenti);
-      slider.addEventListener('mouseleave', mulai);
       // sentuhan HP: geser
       let sx = null;
-      slider.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
-      slider.addEventListener('touchend', e => {
+      hero.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+      hero.addEventListener('touchend', e => {
         if (sx === null) return;
         const dx = e.changedTouches[0].clientX - sx;
         if (Math.abs(dx) > 40) { keSlide(dx < 0 ? idx + 1 : idx - 1); restart(); }
