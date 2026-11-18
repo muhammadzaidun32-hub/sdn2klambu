@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeri — SDN 2 Klambu</title>
+<meta name="description" content="Galeri foto kegiatan SD Negeri 2 Klambu: pembelajaran, ekstrakurikuler, perayaan hari besar, dan kebersamaan.">
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .gal-item{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--hijau-100);cursor:pointer;border:0;padding:0}
+  .gal-item .gal-ph{width:100%;height:100%;display:grid;place-items:center;font-size:3rem;color:var(--hijau-800)}
+  .gal-item .gal-cap{
+    position:absolute;inset:auto 0 0 0;padding:28px 14px 12px;color:#fff;font-size:.85rem;font-weight:700;
+    background:linear-gradient(transparent,rgba(16,59,42,.85));
+  }
+  .gal-item:hover{transform:scale(1.015)}
+  .gal-grad-1{background:linear-gradient(135deg,#57BB85,#1B5E43)}
+  .gal-grad-2{background:linear-gradient(135deg,#F2B33D,#E08E0B)}
+  .gal-grad-3{background:linear-gradient(135deg,#3E9E6C,#134B33)}
+  .gal-grad-4{background:linear-gradient(135deg,#7FC29B,#2E7D57)}
+  .gal-grad-5{background:linear-gradient(135deg,#E08E0B,#B4771B)}
+  .gal-grad-6{background:linear-gradient(135deg,#2E8B57,#257A54)}
+  /* lightbox */
+  .lb{position:fixed;inset:0;background:rgba(10,26,19,.86);display:none;place-items:center;z-index:100;padding:24px}
+  .lb.open{display:grid}
+  .lb-box{background:#fff;border-radius:16px;max-width:640px;width:100%;padding:34px;text-align:center;position:relative}
+  .lb-close{position:absolute;top:10px;right:14px;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--mute)}
+  .lb-emoji{font-size:4rem;margin-bottom:10px}
+  @media (max-width:840px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.gal-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ===== Topbar ===== -->
+<div class="topbar">
+  <div class="container">
+    <span>📍 Jl. Jatidiri, Desa Klambu, Kec. Klambu, Kab. Grobogan 58154</span>
+    <span>🕐 Senin–Kamis 07.00–14.00 WIB</span>
+  </div>
+</div>
+
+<!-- ===== Navbar ===== -->
+<header class="site">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.svg" alt="Logo SDN 2 Klambu" style="width:52px;height:52px">
+      <span>
+        <strong style="display:block;color:var(--hijau-900)">SDN 2 KLAMBU</strong>
+        <span style="font-size:.75rem;color:var(--mute)">Kecamatan Klambu · Kab. Grobogan</span>
+      </span>
+    </a>
+    <nav class="menu" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="akademik.html">Akademik</a>
+      <a href="ppdb.html">PPDB</a>
+      <a href="berita.html">Berita</a>
+      <a href="galeri.html" class="active">Galeri</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="ppdb.html" class="btn-ppdb">Daftar PPDB</a>
+    </nav>
+    <button class="burger" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Page head ===== -->
+<section class="pagehead">
+  <div class="container">
+    <span class="crumbs"><a href="index.html">Beranda</a> / Galeri</span>
+    <h1>Galeri Kegiatan</h1>
+    <p>Dokumentasi momen belajar, bermain, dan berkarya peserta didik SDN 2 Klambu.</p>
+  </div>
+</section>
+
+<!-- ===== Galeri ===== -->
+<section class="block">
+  <div class="container">
+    <div class="gal-grid">
+      <button class="gal-item" data-title="Upacara Bendera Senin" data-desc="Pembiasaan upacara bendera setiap Senin pagi untuk menumbuhkan semangat kebangsaan.">
+        <div class="gal-ph gal-grad-1">🚩</div>
+        <span class="gal-cap">Upacara Bendera Senin</span>
+      </button>
+      <button class="gal-item" data-title="Kelas Tematik Kelas 4" data-desc="Pembelajaran IPAS dengan praktik langsung di lingkungan sekolah.">
+        <div class="gal-ph gal-grad-2">📚</div>
+        <span class="gal-cap">Kelas Tematik Kelas 4</span>
+      </button>
+      <button class="gal-item" data-title="Lomba Layang-Layang 17 Agustus" data-desc="Meriahnya lomba layang-layang antar kelas dalam rangkaian HUT ke-RI.">
+        <div class="gal-ph gal-grad-3">🪁</div>
+        <span class="gal-cap">Lomba 17 Agustus</span>
+      </button>
+      <button class="gal-item" data-title="Senam Sehat Bersama" data-desc="Senam rutin Jumat pagi untuk kebugaran jasmani semua siswa.">
+        <div class="gal-ph gal-grad-4">🤸</div>
+        <span class="gal-cap">Senam Sehat Jumat</span>
+      </button>
+      <button class="gal-item" data-title="Pojok Baca Perpustakaan" data-desc="Peserta didik antre membaca buku favorit di pojok baca perpustakaan mini.">
+        <div class="gal-ph gal-grad-5">📖</div>
+        <span class="gal-cap">Pojok Baca</span>
+      </button>
+      <button class="gal-item" data-title="Penanaman Pohon di Halaman Sekolah" data-desc="Program sekolah hijau: setiap kelas merawat tanaman di lingkungan sekolah.">
+        <div class="gal-ph gal-grad-6">🌳</div>
+        <span class="gal-cap">Penanaman Pohon</span>
+      </button>
+      <button class="gal-item" data-title="Pentas Seni Akhir Tahun" data-desc="Penampilan tari, hadrah, dan paduan suara dalam pentas seni akhir tahun ajaran.">
+        <div class="gal-ph gal-grad-2">🎭</div>
+        <span class="gal-cap">Pentas Seni</span>
+      </button>
+      <button class="gal-item" data-title="Perkemahan Pramuka (Persami)" data-desc="Kegiatan persami kemah wajib: tali-temali, api unggun, dan berkemah.">
+        <div class="gal-ph gal-grad-1">⛺</div>
+        <span class="gal-cap">Persami Pramuka</span>
+      </button>
+      <button class="gal-item" data-title="Pemeriksaan Kesehatan UKS" data-desc="Pemeriksaan berkala bersama Puskesmas Klambu melalui program UKS.">
+        <div class="gal-ph gal-grad-4">🩺</div>
+        <span class="gal-cap">UKS &amp; Puskesmas</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Lightbox ===== -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Detail foto">
+  <div class="lb-box">
+    <button class="lb-close" id="lb-close" aria-label="Tutup">×</button>
+    <div class="lb-emoji" id="lb-emoji">📷</div>
+    <h3 id="lb-title" style="margin-bottom:8px">Judul</h3>
+    <p id="lb-desc" class="muted" style="font-size:.94rem">Deskripsi.</p>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
+          <img src="assets/img/logo.svg" alt="Logo" style="width:48px;height:48px;border-radius:10px">
+          <div>
+            <strong style="color:#fff">SDN 2 KLAMBU</strong>
+            <div style="font-size:.8rem;color:#BFCFC8">NPSN 20314372</div>
+          </div>
+        </div>
+        <p style="font-size:.86rem;color:#BFCFC8">Jl. Jatidiri, Desa Klambu, Kec. Klambu, Kab. Grobogan, Jawa Tengah 58154.</p>
+      </div>
+      <div>
+        <h4>Tautan</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="ppdb.html">PPDB</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li>📍 Jl. Jatidiri, Desa Klambu</li>
+          <li>✉ sdn2klambu@gmail.com</li>
+          <li>🕐 Senin–Kamis 07.00–14.00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2025</span> SD Negeri 2 Klambu</span>
+      <span>Melayani dengan hati, mendidik untuk masa depan.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Lightbox sederhana
+const lb = document.getElementById('lb');
+const lbTitle = document.getElementById('lb-title');
+const lbDesc = document.getElementById('lb-desc');
+const lbEmoji = document.getElementById('lb-emoji');
+document.querySelectorAll('.gal-item').forEach(btn => {
+  btn.addEventListener('click', () => {
+    lbTitle.textContent = btn.dataset.title;
+    lbDesc.textContent = btn.dataset.desc;
+    lbEmoji.textContent = btn.querySelector('.gal-ph').textContent;
+    lb.classList.add('open');
+    document.getElementById('lb-close').focus();
+  });
+});
+document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
+lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
+</body>
+</html>

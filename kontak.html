@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontak — SDN 2 Klambu</title>
+<meta name="description" content="Kontak dan lokasi SD Negeri 2 Klambu: alamat, email, jam layanan, peta, dan formulir pesan.">
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Topbar ===== -->
+<div class="topbar">
+  <div class="container">
+    <span>📍 Jl. Jatidiri, Desa Klambu, Kec. Klambu, Kab. Grobogan 58154</span>
+    <span>🕐 Senin–Kamis 07.00–14.00 WIB</span>
+  </div>
+</div>
+
+<!-- ===== Navbar ===== -->
+<header class="site">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.svg" alt="Logo SDN 2 Klambu" style="width:52px;height:52px">
+      <span>
+        <strong style="display:block;color:var(--hijau-900)">SDN 2 KLAMBU</strong>
+        <span style="font-size:.75rem;color:var(--mute)">Kecamatan Klambu · Kab. Grobogan</span>
+      </span>
+    </a>
+    <nav class="menu" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="akademik.html">Akademik</a>
+      <a href="ppdb.html">PPDB</a>
+      <a href="berita.html">Berita</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="kontak.html" class="active">Kontak</a>
+      <a href="ppdb.html" class="btn-ppdb">Daftar PPDB</a>
+    </nav>
+    <button class="burger" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Page head ===== -->
+<section class="pagehead">
+  <div class="container">
+    <span class="crumbs"><a href="index.html">Beranda</a> / Kontak</span>
+    <h1>Hubungi Kami</h1>
+    <p>Silakan hubungi kami untuk informasi PPDB, kerja sama, atau kunjungan ke sekolah.</p>
+  </div>
+</section>
+
+<!-- ===== Info Kontak + Form ===== -->
+<section class="block">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="grid grid-2" style="gap:14px">
+          <div class="card">
+            <div class="ico gold" style="background:var(--emas-100)">📍</div>
+            <h3 style="font-size:1rem">Alamat</h3>
+            <p>Jl. Jatidiri, Desa Klambu, Kec. Klambu, Kab. Grobogan, Jawa Tengah 58154</p>
+          </div>
+          <div class="card">
+            <div class="ico gold" style="background:var(--emas-100)">✉</div>
+            <h3 style="font-size:1rem">Email</h3>
+            <p>sdn2klambu@gmail.com</p>
+          </div>
+          <div class="card">
+            <div class="ico gold" style="background:var(--emas-100)">🕐</div>
+            <h3 style="font-size:1rem">Jam Layanan</h3>
+            <p>Senin–Kamis, 07.00–14.00 WIB</p>
+          </div>
+          <div class="card">
+            <div class="ico gold" style="background:var(--emas-100)">🏅</div>
+            <h3 style="font-size:1rem">Akreditasi</h3>
+            <p>B (BAN-SM, 2019) — NPSN 20314372</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px;padding:0;overflow:hidden">
+          <iframe
+            src="https://www.google.com/maps?q=SD+Negeri+2+Klambu,+Klambu,+Grobogan&output=embed"
+            width="100%" height="300" style="border:0;display:block" loading="lazy"
+            title="Peta lokasi SDN 2 Klambu" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3 style="margin-bottom:6px">Kirim Pesan</h3>
+        <p class="muted" style="font-size:.9rem;margin-bottom:8px">Kami akan membalas via email atau WhatsApp secepatnya.</p>
+        <form id="form-kontak" novalidate>
+          <label for="k-nama">Nama *</label>
+          <input type="text" id="k-nama" required placeholder="Nama Anda">
+          <label for="k-email">Email / WhatsApp *</label>
+          <input type="text" id="k-email" required placeholder="email atau nomor WhatsApp">
+          <label for="k-subjek">Subjek *</label>
+          <select id="k-subjek" required>
+            <option value="">— pilih —</option>
+            <option>Informasi PPDB</option>
+            <option>Kerja sama / Donasi</option>
+            <option>Kritik &amp; saran</option>
+            <option>Lainnya</option>
+          </select>
+          <label for="k-pesan">Pesan *</label>
+          <textarea id="k-pesan" rows="5" required placeholder="Tulis pesan Anda di sini…"></textarea>
+          <button type="submit" class="btn-submit">Kirim Pesan</button>
+          <p id="kontak-msg" role="status" style="display:none;margin-top:12px;font-weight:700;color:var(--hijau-700);text-align:center">✓ Terima kasih! Pesan Anda terkirim (simulasi — akan terhubung ke email sekolah saat hosting).</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
+          <img src="assets/img/logo.svg" alt="Logo" style="width:48px;height:48px;border-radius:10px">
+          <div>
+            <strong style="color:#fff">SDN 2 KLAMBU</strong>
+            <div style="font-size:.8rem;color:#BFCFC8">NPSN 20314372</div>
+          </div>
+        </div>
+        <p style="font-size:.86rem;color:#BFCFC8">Jl. Jatidiri, Desa Klambu, Kec. Klambu, Kab. Grobogan, Jawa Tengah 58154.</p>
+      </div>
+      <div>
+        <h4>Tautan</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="ppdb.html">PPDB</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li>📍 Jl. Jatidiri, Desa Klambu</li>
+          <li>✉ sdn2klambu@gmail.com</li>
+          <li>🕐 Senin–Kamis 07.00–14.00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2025</span> SD Negeri 2 Klambu</span>
+      <span>Melayani dengan hati, mendidik untuk masa depan.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// simulasi submit kontak
+document.getElementById('form-kontak').addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (!this.checkValidity()) { this.reportValidity(); return; }
+  document.getElementById('kontak-msg').style.display = 'block';
+  this.querySelector('.btn-submit').textContent = '✓ Terkirim';
+  this.querySelectorAll('input,select,textarea').forEach(el => el.value = '');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Ilustrasi guru dan murid">
+  <rect width="480" height="300" fill="#EAF4EE" rx="18"/>
+  <circle cx="240" cy="330" r="150" fill="#DFF0E5"/>
+  <!-- murid 1 -->
+  <g transform="translate(150,180)">
+    <circle cx="0" cy="0" r="26" fill="#F5CBA8"/>
+    <path d="M-26 -6 C-26 -34 26 -34 26 -6 C26 -14 20 -20 0 -20 C-20 -20 -26 -14 -26 -6 Z" fill="#1B5E43"/>
+    <rect x="-24" y="26" width="48" height="70" rx="18" fill="#2E7D57"/>
+    <path d="M-24 40 L-8 70 M24 40 L8 70" stroke="#2E7D57" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <!-- murid 2 -->
+  <g transform="translate(240,170)">
+    <circle cx="0" cy="0" r="28" fill="#F5CBA8"/>
+    <path d="M-28 -6 C-28 -38 28 -38 28 -6 C28 -16 20 -22 0 -22 C-20 -22 -28 -16 -28 -6 Z" fill="#3B3B3B"/>
+    <rect x="-24" y="28" width="48" height="72" rx="18" fill="#FFFFFF" stroke="#D5DED9"/>
+    <path d="M46 60 L46 66" stroke="#F2B33D" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- murid 3 -->
+  <g transform="translate(330,180)">
+    <circle cx="0" cy="0" r="26" fill="#F5CBA8"/>
+    <path d="M-26 -6 C-26 -34 26 -34 26 -6 C26 -14 20 -20 0 -20 C-20 -20 -26 -14 -26 -6 Z" fill="#5A3825"/>
+    <rect x="-24" y="26" width="48" height="70" rx="18" fill="#4CAF7D"/>
+    <path d="M-24 40 L-8 70 M24 40 L8 70" stroke="#4CAF7D" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <!-- bintang & sparkle -->
+  <g fill="#F2B33D">
+    <path d="M84 84 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5 Z"/>
+    <path d="M392 70 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 Z"/>
+    <circle cx="60" cy="200" r="5"/>
+    <circle cx="420" cy="150" r="5"/>
+  </g>
+</svg>

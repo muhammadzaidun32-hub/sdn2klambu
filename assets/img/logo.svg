@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Logo SDN 2 Klambu">
+  <defs>
+    <linearGradient id="lg-shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E7D57"/>
+      <stop offset="1" stop-color="#1B5E43"/>
+    </linearGradient>
+    <linearGradient id="lg-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD97A"/>
+      <stop offset="1" stop-color="#F2B33D"/>
+    </linearGradient>
+  </defs>
+  <!-- perisai -->
+  <path d="M60 6 L104 20 V62 C104 88 84 106 60 114 C36 106 16 88 16 62 V20 Z" fill="url(#lg-shield)" stroke="#123C2B" stroke-width="3"/>
+  <path d="M60 14 L96 25.5 V61 C96 83.5 79.5 99 60 106 C40.5 99 24 83.5 24 61 V25.5 Z" fill="none" stroke="#F2B33D" stroke-width="2" opacity=".85"/>
+  <!-- matahari -->
+  <g transform="translate(60,34)">
+    <circle r="11" fill="url(#lg-sun)"/>
+    <g stroke="#F2B33D" stroke-width="2.6" stroke-linecap="round">
+      <line x1="0" y1="-16" x2="0" y2="-20"/><line x1="0" y1="16" x2="0" y2="20"/>
+      <line x1="-16" y1="0" x2="-20" y2="0"/><line x1="16" y1="0" x2="20" y2="0"/>
+      <line x1="-11.5" y1="-11.5" x2="-14.5" y2="-14.5"/><line x1="11.5" y1="11.5" x2="14.5" y2="14.5"/>
+      <line x1="-11.5" y1="11.5" x2="-14.5" y2="14.5"/><line x1="11.5" y1="-11.5" x2="14.5" y2="-14.5"/>
+    </g>
+  </g>
+  <!-- buku terbuka -->
+  <g transform="translate(60,72)">
+    <path d="M-30 -4 C-20 -10 -8 -10 0 -4 C8 -10 20 -10 30 -4 L30 10 C20 4 8 4 0 10 C-8 4 -20 4 -30 10 Z" fill="#FFFFFF"/>
+    <path d="M0 -4 L0 10" stroke="#1B5E43" stroke-width="2.4"/>
+    <path d="M-24 -1 C-16 -5.5 -8 -5.5 -3 -1.5 M-24 3.5 C-16 -1 -8 -1 -3 3 M24 -1 C16 -5.5 8 -5.5 3 -1.5 M24 3.5 C16 -1 8 -1 3 3" stroke="#B9D9C8" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- angka 2 -->
+  <g transform="translate(60,96)" font-family="Arial, sans-serif" font-weight="bold" font-size="17" fill="#F2B33D" text-anchor="middle">2</g>
+  <!-- padi kapas sederhana -->
+  <g stroke="#8FD1AE" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M26 78 C22 88 24 96 30 102"/>
+    <path d="M94 78 C98 88 96 96 90 102"/>
+  </g>
+</svg>
