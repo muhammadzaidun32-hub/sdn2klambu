@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jadwal Pelajaran — SDN 2 Klambu</title>
+<meta name="description" content="Jadwal pelajaran kelas 1–6 dan kalender sekolah SD Negeri 2 Klambu.">
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span data-bind="kontak.alamat">📍 Jl. Jatidiri, Desa Klambu, Kec. Klambu, Kab. Grobogan 58154</span>
+    <span data-bind="kontak.jam">🕐 Senin–Kamis 07.00–14.00 WIB</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.svg" alt="Logo SDN 2 Klambu" style="width:52px;height:52px">
+      <span>
+        <strong style="display:block;color:var(--hijau-900)">SDN 2 KLAMBU</strong>
+        <span style="font-size:.75rem;color:var(--mute)">Kecamatan Klambu · Kab. Grobogan</span>
+      </span>
+    </a>
+    <nav class="menu" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="akademik.html">Akademik</a>
+      <a href="jadwal.html" class="active">Jadwal</a>
+      <a href="ppdb.html">PPDB</a>
+      <a href="berita.html">Berita</a>
+      <a href="unduhan.html">Unduhan</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="ppdb.html" class="btn-ppdb">Daftar PPDB</a>
+    </nav>
+    <button class="burger" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="container">
+    <span class="crumbs"><a href="index.html">Beranda</a> / Jadwal</span>
+    <h1>Jadwal Pelajaran &amp; Kalender</h1>
+    <p>Jadwal belajar kelas 1–6 dan kalender kegiatan sekolah Tahun Pelajaran <b data-bind="pengaturan.tahunPelajaran">2025/2026</b>.</p>
+  </div>
+</section>
+
+<!-- ===== Jadwal kelas ===== -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Kelas 1 – 6</span>
+      <h2>Jadwal Pelajaran Mingguan</h2>
+      <p>Pilih kelas untuk melihat jadwal. Jadwal dapat berubah — pantau halaman ini.</p>
+    </div>
+    <div class="pill-row" id="kelas-tabs" style="margin-bottom:22px"></div>
+    <div class="table-wrap">
+      <table class="nice" id="tabel-jadwal">
+        <thead><tr><th>Hari</th><th>Jam</th><th>Mata Pelajaran / Kegiatan</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Kalender sekolah ===== -->
+<section class="block" style="background:var(--hijau-50)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Kalender sekolah</span>
+      <h2>Kegiatan Penting Setahun</h2>
+      <p>Tanggal dan kegiatan penting sepanjang tahun pelajaran.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="nice">
+        <thead><tr><th>Tanggal</th><th>Kegiatan</th></tr></thead>
+        <tbody data-bind-container="kalender-sekolah"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
+          <img src="assets/img/logo.svg" alt="Logo" style="width:48px;height:48px;border-radius:10px">
+          <div>
+            <strong style="color:#fff">SDN 2 KLAMBU</strong>
+            <div style="font-size:.8rem;color:#BFCFC8">NPSN 20314372</div>
+          </div>
+        </div>
+        <p style="font-size:.86rem;color:#BFCFC8">Jl. Jatidiri, Desa Klambu, Kec. Klambu, Kab. Grobogan, Jawa Tengah 58154.</p>
+      </div>
+      <div>
+        <h4>Tautan</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="akademik.html">Akademik</a></li>
+          <li><a href="ppdb.html">PPDB</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="jadwal.html">Jadwal</a></li>
+          <li><a href="unduhan.html">Unduhan</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li>📍 Jl. Jatidiri, Desa Klambu</li>
+          <li>✉ sdn2klambu@gmail.com</li>
+          <li>🕐 Senin–Kamis 07.00–14.00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2025</span> SD Negeri 2 Klambu</span>
+      <span>Designed by Kang Zaed</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/konten-publik.js"></script>
+<script>
+// Tab kelas 1-6: ambil dari DATA global yang diisi loader
+document.addEventListener("konten:muat", (e) => {
+  const data = e.detail;
+  const jadwal = data.jadwal || {};
+  const tabs = document.getElementById("kelas-tabs");
+  const tbody = document.querySelector("#tabel-jadwal tbody");
+  if (!tabs || !tbody) return;
+  tabs.replaceChildren();
+  Object.keys(jadwal).sort().forEach(k => {
+    const b = document.createElement("button");
+    b.className = "pill";
+    b.type = "button";
+    b.textContent = "Kelas " + k;
+    b.style.cursor = "pointer";
+    b.addEventListener("click", () => {
+      tabs.querySelectorAll(".pill").forEach(x => { x.style.background = "#fff"; x.style.color = "inherit"; x.style.borderColor = "var(--line)"; });
+      b.style.background = "var(--hijau-800)"; b.style.color = "#fff"; b.style.borderColor = "var(--hijau-800)";
+      tbody.replaceChildren();
+      (jadwal[k] || []).forEach(r => {
+        const tr = document.createElement("tr");
+        [r.h, r.j, r.k].forEach(v => {
+          const td = document.createElement("td");
+          td.textContent = v || "";
+          td.style.padding = "10px 16px";
+          tr.append(td);
+        });
+        tbody.append(tr);
+      });
+    });
+    tabs.append(b);
+  });
+  // tampilkan kelas 1 default
+  if (tabs.firstChild) tabs.firstChild.click();
+});
+</script>
+</body>
+</html>

@@ -71,11 +71,7 @@
 <!-- ===== Statistik ===== -->
 <section class="stats-band" aria-label="Statistik sekolah">
   <div class="container" style="padding:0">
-    <div class="stats-grid">
-      <div class="stat"><b>B</b><span>Akreditasi BAN-PDM</span></div>
-      <div class="stat"><b>6</b><span>Rombongan Belajar</span></div>
-      <div class="stat"><b>6–12</b><span>Usia Peserta Didik</span></div>
-      <div class="stat"><b>Gratis</b><span>PPDB &amp; Pendidikan</span></div>
+    <div class="stats-grid" data-bind-container="statistik">
     </div>
   </div>
 </section>
@@ -85,16 +81,19 @@
   <div class="container">
     <div class="split-even">
       <div class="tint-deep" style="padding:34px;border-radius:20px;text-align:center">
-        <div style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#FFD97A,#F2B33D);margin:0 auto 14px;display:grid;place-items:center;font-size:2.2rem">👨‍🏫</div>
-        <h3 style="color:#fff;font-size:1.15rem;margin-bottom:4px">TARMUNDI, S.Pd.SD</h3>
-        <p style="color:#CFE3DA;font-size:.86rem">Kepala Sekolah</p>
-        <p style="color:#CFE3DA;font-size:.9rem;margin-top:12px;line-height:1.7">"Pendidikan adalah perjalanan panjang. Di SDN 2 Klambu, setiap anak kami dampingi tumbuh dengan bahagia, berkarakter, dan berprestasi."</p>
+        <div style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#FFD97A,#F2B33D);margin:0 auto 14px;display:grid;place-items:center;font-size:2.2rem;overflow:hidden" data-bind-foto="kepsek">
+          <img data-bind-img="kepsek.foto" alt="Foto Kepala Sekolah" style="width:100%;height:100%;object-fit:cover;display:none">
+          <span class="foto-fallback">👨‍🏫</span>
+        </div>
+        <h3 style="color:#fff;font-size:1.15rem;margin-bottom:4px" data-bind="kepsek.nama">TARMUNDI, S.Pd.SD</h3>
+        <p style="color:#CFE3DA;font-size:.86rem" data-bind="kepsek.jabatan">Kepala Sekolah</p>
+        <p style="color:#CFE3DA;font-size:.9rem;margin-top:12px;line-height:1.7" data-bind="kepsek.kutipan">"Pendidikan adalah perjalanan panjang. Di SDN 2 Klambu, setiap anak kami dampingi tumbuh dengan bahagia, berkarakter, dan berprestasi."</p>
       </div>
       <div>
         <span class="eyebrow">Sambutan Kepala Sekolah</span>
         <h2 style="font-size:1.7rem;margin-bottom:12px">Membangun Generasi Emas Indonesia</h2>
-        <p class="muted" style="margin-bottom:12px">Assalamu'alaikum warahmatullahi wabarakatuh. Puji syukur ke hadirat Tuhan Yang Maha Esa, website resmi SD Negeri 2 Klambu hadir sebagai jendela informasi sekolah — profil, program pendidikan, jalur PPDB, hingga kegiatan harian peserta didik.</p>
-        <p class="muted">Kami percaya setiap anak membawa fitrah kebaikan dan potensi uniknya sendiri. Tugas kami bersama orang tua dan masyarakat adalah merawat api rasa ingin tahu itu, menanamkan nilai kejujuran dan disiplin, serta mempersiapkan mereka menjadi generasi emas Indonesia 2045.</p>
+        <p class="muted" style="margin-bottom:12px" data-bind="kepsek.sambutan1">Assalamu'alaikum warahmatullahi wabarakatuh. Puji syukur ke hadirat Tuhan Yang Maha Esa, website resmi SD Negeri 2 Klambu hadir sebagai jendela informasi sekolah — profil, program pendidikan, jalur PPDB, hingga kegiatan harian peserta didik.</p>
+        <p class="muted" data-bind="kepsek.sambutan2">Kami percaya setiap anak membawa fitrah kebaikan dan potensi uniknya sendiri. Tugas kami bersama orang tua dan masyarakat adalah merawat api rasa ingin tahu itu, menanamkan nilai kejujuran dan disiplin, serta mempersiapkan mereka menjadi generasi emas Indonesia 2045.</p>
         <div style="margin-top:16px">
           <a class="btn btn-gold" href="profil.html" style="background:var(--hijau-800);color:#fff">Selengkapnya tentang kami →</a>
         </div>
@@ -111,32 +110,8 @@
       <h2>Program Unggulan SDN 2 Klambu</h2>
       <p>Layanan pendidikan kami didesain agar setiap peserta didik tumbuh optimal — cerdas, berkarakter, dan selangkah lebih siap menghadapi masa depan.</p>
     </div>
-    <div class="grid grid-4">
-      <div class="card">
-        <div class="ico">📚</div>
-        <h3>Kurikulum Merdeka</h3>
-        <p>Pembelajaran berpusat pada murid dengan projek penguatan Profil Pelajar Pancasila.</p>
-        <p style="margin-top:8px;font-size:.82rem;color:var(--emas-600);font-weight:700">√ Berbasis karakter</p>
-      </div>
-      <div class="card">
-        <div class="ico">🌟</div>
-        <h3>Literasi &amp; Numerasi</h3>
-        <p>Penguatan membaca, menulis, berhitung melalui pojok baca dan pembiasaan 15 menit sebelum belajar.</p>
-        <p style="margin-top:8px;font-size:.82rem;color:var(--emas-600);font-weight:700">√ Dasar mutu belajar</p>
-      </div>
-      <div class="card">
-        <div class="ico">🌱</div>
-        <h3>Adiwiyata &amp; Lingkungan</h3>
-        <p>Edukasi lingkungan: piket kebersihan, senam sehat, bank sampah, dan penanaman pohon bersama.</p>
-        <p style="margin-top:8px;font-size:.82rem;color:var(--emas-600);font-weight:700">√ Sekolah hijau</p>
-      </div>
-      <div class="card">
-        <div class="ico">🤝</div>
-        <h3>Kolaborasi Orang Tua</h3>
-        <p>Parenting dan komunikasi rutin wali kelas — orang tua mitra utama pendidikan anak.</p>
-        <p style="margin-top:8px;font-size:.82rem;color:var(--emas-600);font-weight:700">√ Komunikasi terbuka</p>
-      </div>
-      </div>
+    <div class="grid grid-4" data-bind-container="program">
+    </div>
     </div>
   </div>
 </section>
@@ -176,31 +151,7 @@
       </div>
       <a href="berita.html" class="btn btn-outline" style="color:var(--hijau-800);border:1.6px solid var(--hijau-800)">Semua Berita →</a>
     </div>
-    <div class="grid grid-3" style="margin-top:24px">
-      <div class="news-card">
-        <div class="news-thumb"><span style="display:grid;place-items:center;height:100%;font-size:3rem">🎉</span></div>
-        <div class="news-body">
-          <span class="news-cat">Prestasi</span>
-          <h3>Siswa SDN 2 Klambu Raih Juara 2 O2SN Tingkat Kabupaten</h3>
-          <p>Perwakilan kelas VI membawa pulang medali perak cabang lari 100 meter putri di ajang O2SN tingkat kabupaten.</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb"><span style="display:grid;place-items:center;height:100%;font-size:3rem">📖</span></div>
-        <div class="news-body">
-          <span class="news-cat">Pembelajaran</span>
-          <h3>Gerakan Literasi Sekolah: Pojok Baca Melenggang Kembali</h3>
-          <p>Perpustakaan mini sekolah menambah koleksi buku bacaan baru hasil kolaborasi dengan komite dan donatur.</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb"><span style="display:grid;place-items:center;height:100%;font-size:3rem">🏡</span></div>
-        <div class="news-body">
-          <span class="news-cat">Sekolah &amp; Warga</span>
-          <h3>Sekolah Adiwiyata: Gerakan Memilah &amp; Menanam</h3>
-          <p>Siswa dibiasakan memilah sampah dan merawat tanaman sekolah sebagai wujud kepedulian lingkungan.</p>
-        </div>
-      </div>
+    <div class="grid grid-3" style="margin-top:24px" data-bind-container="berita">
     </div>
   </div>
 </section>
@@ -261,11 +212,12 @@
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2025</span> SD Negeri 2 Klambu. Hak cipta dilindungi.</span>
-      <span>Melayani dengan hati, mendidik untuk masa depan.</span>
+      <span>Designed by Kang Zaed</span>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/konten-publik.js"></script>
 </body>
 </html>

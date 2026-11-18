@@ -63,11 +63,11 @@
       <div>
         <span class="eyebrow">Tentang sekolah</span>
         <h2 style="margin-bottom:14px">SD Negeri 2 Klambu</h2>
-        <p class="muted">SD Negeri 2 Klambu adalah satuan pendidikan formal jenjang sekolah dasar yang berada di Desa Klambu, Kecamatan Klambu, Kabupaten Grobogan, Jawa Tengah. Sekolah ini mendidik peserta didik usia 6–12 tahun melalui program pembelajaran yang aktif, menyenangkan, dan berpusat pada murid.</p>
-        <p class="muted" style="margin-top:12px">Didukung oleh pendidik yang berdedikasi dan lingkungan yang asri, SDN 2 Klambu berkomitmen mencetak generasi yang cerdas secara akademik, matang secara karakter, serta peduli terhadap sesama dan lingkungan.</p>
+        <p class="muted" data-bind="profilTeks.0">SD Negeri 2 Klambu adalah satuan pendidikan formal jenjang sekolah dasar yang berada di Desa Klambu, Kecamatan Klambu, Kabupaten Grobogan, Jawa Tengah. Sekolah ini mendidik peserta didik usia 6–12 tahun melalui program pembelajaran yang aktif, menyenangkan, dan berpusat pada murid.</p>
+        <p class="muted" style="margin-top:12px" data-bind="profilTeks.1">Didukung oleh pendidik yang berdedikasi dan lingkungan yang asri, SDN 2 Klambu berkomitmen mencetak generasi yang cerdas secara akademik, matang secara karakter, serta peduli terhadap sesama dan lingkungan.</p>
 
         <h3 style="margin-top:26px;margin-bottom:10px">Sejarah Singkat</h3>
-        <p class="muted">Sekolah ini telah berdiri sejak lama dan menjadi tempat menimba ilmu bagi warga Desa Klambu turun-temurun. Seiring waktu, SDN 2 Klambu terus berevolusi — memperbarui cara belajar mengajar, menghadirkan fasilitas yang lebih baik, dan menyesuaikan diri dengan kurikulum terbaru tanpa meninggalkan nilai budaya lokal.</p>
+        <p class="muted" data-bind="sejarah">Sekolah ini telah berdiri sejak lama dan menjadi tempat menimba ilmu bagi warga Desa Klambu turun-temurun. Seiring waktu, SDN 2 Klambu terus berevolusi — memperbarui cara belajar mengajar, menghadirkan fasilitas yang lebih baik, dan menyesuaikan diri dengan kurikulum terbaru tanpa meninggalkan nilai budaya lokal.</p>
 
         <div class="grid grid-2" style="margin-top:22px;gap:14px">
           <div class="card" style="padding:16px 18px">
@@ -113,15 +113,11 @@
 
     <div class="tint-deep" style="padding:36px;border-radius:20px;text-align:center;max-width:760px;margin:0 auto 14px">
       <p style="font-size:.78rem;letter-spacing:2px;color:#FFD97A;margin-bottom:8px">VISI</p>
-      <p style="font-size:1.25rem;font-weight:700;line-height:1.55">"Terwujudnya peserta didik yang beriman, cerdas, berkarakter, dan peduli lingkungan."</p>
+      <p style="font-size:1.25rem;font-weight:700;line-height:1.55" data-bind="visi">"Terwujudnya peserta didik yang beriman, cerdas, berkarakter, dan peduli lingkungan."</p>
     </div>
     <p class="muted" style="text-align:center;font-size:.86rem;margin-bottom:28px">MISI — dirumuskan sebagai langkah operasional visi:</p>
 
-    <div class="grid grid-2" style="gap:16px">
-      <div class="card"><b style="color:var(--hijau-700)">1.</b> Menyelenggarakan pembelajaran aktif, inovatif, dan menyenangkan bagi semua peserta didik.</div>
-      <div class="card"><b style="color:var(--hijau-700)">2.</b> Menumbuhkan karakter positif: jujur, disiplin, tanggung jawab, dan santun.</div>
-      <div class="card"><b style="color:var(--hijau-700)">3.</b> Mengembangkan potensi akademik dan non-akademik sesuai minat &amp; bakat murid.</div>
-      <div class="card"><b style="color:var(--hijau-700)">4.</b> Membangun budaya sekolah yang bersih, hijau, dan ramah anak.</div>
+    <div class="grid grid-2" style="gap:16px" data-bind-container="misi-list">
     </div>
   </div>
 </section>
@@ -134,67 +130,7 @@
       <h2>Guru &amp; Tenaga Kependidikan</h2>
       <p>Pendidik dan tenaga kependidikan yang berdedikasi memajukan putra-putri Kecamatan Klambu.</p>
     </div>
-    <div class="grid grid-4">
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">T</div>
-        <h3 style="font-size:1rem">TARMUNDI, S.Pd.SD</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Kepala Sekolah</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">G1</div>
-        <h3 style="font-size:1rem">Guru Kelas 1</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Wali Kelas</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">G2</div>
-        <h3 style="font-size:1rem">Guru Kelas 2</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Wali Kelas</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">G3</div>
-        <h3 style="font-size:1rem">Guru Kelas 3</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Wali Kelas</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">G4</div>
-        <h3 style="font-size:1rem">Guru Kelas 4</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Wali Kelas</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">G5</div>
-        <h3 style="font-size:1rem">Guru Kelas 5</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Wali Kelas</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">G6</div>
-        <h3 style="font-size:1rem">Guru Kelas 6</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Wali Kelas</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">PAI</div>
-        <h3 style="font-size:1rem">Guru PAI</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Pendamping Agama</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">ENG</div>
-        <h3 style="font-size:1rem">Guru Bahasa Inggris</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Pendamping</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">OR</div>
-        <h3 style="font-size:1rem">Guru Olahraga</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">PJOK</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">OP</div>
-        <h3 style="font-size:1rem">Tenaga Operasional</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Tata Usaha</p>
-      </div>
-      <div class="card center">
-        <div class="avatar-ph" style="margin:0 auto 12px">PS</div>
-        <h3 style="font-size:1rem">Penjaga Sekolah</h3>
-        <p style="font-size:.84rem;color:var(--mute);margin:0">Keamanan</p>
-      </div>
+    <div class="grid grid-4" data-bind-container="guru">
     </div>
   </div>
 </section>
@@ -241,11 +177,12 @@
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2025</span> SD Negeri 2 Klambu</span>
-      <span>Dibangun dengan ❤ untuk pendidikan Indonesia.</span>
+      <span>Designed by Kang Zaed</span>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/konten-publik.js"></script>
 </body>
 </html>

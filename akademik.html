@@ -107,37 +107,7 @@
       <h2>Ekstrakurikuler</h2>
       <p>Kegiatan pengembangan diri di luar jam sekolah — peserta didik bebas memilih sesuai minat.</p>
     </div>
-    <div class="grid grid-3">
-      <div class="card">
-        <div class="ico">🏴</div>
-        <h3>Pramuka</h3>
-        <p>Kegiatan wajib pembinaan karakter: kedisiplinan, kemandirian, kerja sama, dan cinta alam melalui kegiatan rutin mingguan.</p>
-      </div>
-      <div class="card">
-        <div class="ico">⚽</div>
-        <h3>Futsal &amp; Voli</h3>
-        <p>Pembinaan olahraga tim untuk kesehatan fisik, sportivitas, dan kerja sama.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🎨</div>
-        <h3>Seni Tari &amp; Rupa</h3>
-        <p>Pelestarian budaya Jawa melalui tari daerah, melukis, dan kriya tangan prestasi-ganda.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🎤</div>
-        <h3>Seni Vokal &amp; Hadrah</h3>
-        <p>Pengembangan bakat seni musik Islami dan vokal untuk berbagai ajang lomba.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🌿</div>
-        <h3>Pecinta Alam</h3>
-        <p>Membentuk kepedulian lingkungan: piket kebersihan, merawat tanaman, dan bank sampah.</p>
-      </div>
-      <div class="card">
-        <div class="ico">📘</div>
-        <h3>Literasi &amp; Tahfidz</h3>
-        <p>Penguatan membaca Al-Qur'an dan program literasi sekolah rutin harian.</p>
-      </div>
+    <div class="grid grid-3" data-bind-container="ekskul">
     </div>
   </div>
 </section>
@@ -153,30 +123,15 @@
     <div class="grid grid-3">
       <div class="card">
         <span class="tag">Semester 1 (Ganjil)</span>
-        <ul class="check-list" style="margin-top:12px">
-          <li>MPLS — minggu pertama masuk sekolah</li>
-          <li>P5 tema Kebhinekaan &amp; kearifan lokal</li>
-          <li>Asesmen sumatif tengah semester</li>
-          <li>Asesmen sumatif akhir semester ganjil</li>
-        </ul>
+        <ul class="check-list" style="margin-top:12px" data-bind-container="kalender.ganjil"></ul>
       </div>
       <div class="card">
         <span class="tag">Semester 2 (Genap)</span>
-        <ul class="check-list" style="margin-top:12px">
-          <li>Kegiatan BP/BK &amp; penguatan literasi</li>
-          <li>P5 tema rekayasa &amp; teknologi</li>
-          <li>Asesmen sumatif akhir tahun</li>
-          <li>Pekan apresiasi seni &amp; karya siswa</li>
-        </ul>
+        <ul class="check-list" style="margin-top:12px" data-bind-container="kalender.genap"></ul>
       </div>
       <div class="card">
         <span class="tag">Libur &amp; Perayaan</span>
-        <ul class="check-list" style="margin-top:12px">
-          <li>Libur semester &amp; libur akhir tahun</li>
-          <li>Peringatan hari nasional &amp; perayaan hari besar</li>
-          <li>Pesantren kilat &amp; peringatan besar Islam</li>
-          <li>Pentas seni akhir tahun ajaran</li>
-        </ul>
+        <ul class="check-list" style="margin-top:12px" data-bind-container="kalender.libur"></ul>
       </div>
     </div>
   </div>
@@ -224,11 +179,12 @@
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2025</span> SD Negeri 2 Klambu</span>
-      <span>Dibangun dengan ❤ untuk pendidikan Indonesia.</span>
+      <span>Designed by Kang Zaed</span>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/konten-publik.js"></script>
 </body>
 </html>

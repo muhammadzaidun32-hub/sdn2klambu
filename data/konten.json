@@ -1,0 +1,245 @@
+{
+  "pengaturan": {
+    "ppdbAktif": true,
+    "waAktif": false,
+    "waNomor": "",
+    "waTeks": "Assalamualaikum, saya ingin bertanya tentang PPDB SDN 2 Klambu.",
+    "tahunPelajaran": "2025/2026"
+  },
+  "kepsek": {
+    "nama": "TARMUNDI, S.Pd.SD",
+    "jabatan": "Kepala Sekolah",
+    "sambutan1": "Assalamu'alaikum warahmatullahi wabarakatuh. Puji syukur ke hadirat Tuhan Yang Maha Esa, website resmi SD Negeri 2 Klambu hadir sebagai jendela informasi sekolah — profil, program pendidikan, jalur PPDB, hingga kegiatan harian peserta didik.",
+    "sambutan2": "Kami percaya setiap anak membawa fitrah kebaikan dan potensi uniknya sendiri. Tugas kami bersama orang tua dan masyarakat adalah merawat api rasa ingin tahu itu, menanamkan nilai kejujuran dan disiplin, serta mempersiapkan mereka menjadi generasi emas Indonesia 2045.",
+    "kutipan": "Pendidikan adalah perjalanan panjang. Di SDN 2 Klambu, setiap anak kami dampingi tumbuh dengan bahagia, berkarakter, dan berprestasi.",
+    "foto": ""
+  },
+  "visi": "Terwujudnya peserta didik yang beriman, cerdas, berkarakter, dan peduli lingkungan.",
+  "misi": [
+    "Menyelenggarakan pembelajaran aktif, inovatif, dan menyenangkan bagi semua peserta didik.",
+    "Menumbuhkan karakter positif: jujur, disiplin, tanggung jawab, dan santun.",
+    "Mengembangkan potensi akademik dan non-akademik sesuai minat & bakat murid.",
+    "Membangun budaya sekolah yang bersih, hijau, dan ramah anak."
+  ],
+  "profilTeks": [
+    "SD Negeri 2 Klambu adalah satuan pendidikan formal jenjang sekolah dasar yang berada di Desa Klambu, Kecamatan Klambu, Kabupaten Grobogan, Jawa Tengah. Sekolah ini mendidik peserta didik usia 6–12 tahun melalui program pembelajaran yang aktif, menyenangkan, dan berpusat pada murid.",
+    "Didukung oleh pendidik yang berdedikasi dan lingkungan yang asri, SDN 2 Klambu berkomitmen mencetak generasi yang cerdas secara akademik, matang secara karakter, serta peduli terhadap sesama dan lingkungan."
+  ],
+  "sejarah": "Sekolah ini telah berdiri sejak lama dan menjadi tempat menimba ilmu bagi warga Desa Klambu turun-temurun. Seiring waktu, SDN 2 Klambu terus berevolusi — memperbarui cara belajar mengajar, menghadirkan fasilitas yang lebih baik, dan menyesuaikan diri dengan kurikulum terbaru tanpa meninggalkan nilai budaya lokal.",
+  "statistik": [
+    { "label": "Akreditasi BAN-PDM", "nilai": "B" },
+    { "label": "Rombongan Belajar", "nilai": "6" },
+    { "label": "Usia Peserta Didik", "nilai": "6–12" },
+    { "label": "PPDB & Pendidikan", "nilai": "Gratis" }
+  ],
+  "program": [
+    { "ikon": "📚", "judul": "Kurikulum Merdeka", "teks": "Pembelajaran berpusat pada murid dengan projek penguatan Profil Pelajar Pancasila.", "tanda": "√ Berbasis karakter", "foto": "" },
+    { "ikon": "🌟", "judul": "Literasi & Numerasi", "teks": "Penguatan membaca, menulis, berhitung melalui pojok baca dan pembiasaan 15 menit sebelum belajar.", "tanda": "√ Dasar mutu belajar", "foto": "" },
+    { "ikon": "🌱", "judul": "Adiwiyata & Lingkungan", "teks": "Edukasi lingkungan: piket kebersihan, senam sehat, bank sampah, dan penanaman pohon bersama.", "tanda": "√ Sekolah hijau", "foto": "" },
+    { "ikon": "🤝", "judul": "Kolaborasi Orang Tua", "teks": "Parenting dan komunikasi rutin wali kelas — orang tua mitra utama pendidikan anak.", "tanda": "√ Komunikasi terbuka", "foto": "" }
+  ],
+  "guru": [
+    { "nama": "TARMUNDI, S.Pd.SD", "peran": "Kepala Sekolah", "inisial": "T", "foto": "" },
+    { "nama": "Guru Kelas 1", "peran": "Wali Kelas", "inisial": "G1", "foto": "" },
+    { "nama": "Guru Kelas 2", "peran": "Wali Kelas", "inisial": "G2", "foto": "" },
+    { "nama": "Guru Kelas 3", "peran": "Wali Kelas", "inisial": "G3", "foto": "" },
+    { "nama": "Guru Kelas 4", "peran": "Wali Kelas", "inisial": "G4", "foto": "" },
+    { "nama": "Guru Kelas 5", "peran": "Wali Kelas", "inisial": "G5", "foto": "" },
+    { "nama": "Guru Kelas 6", "peran": "Wali Kelas", "inisial": "G6", "foto": "" },
+    { "nama": "Guru PAI", "peran": "Pendamping Agama", "inisial": "PAI", "foto": "" },
+    { "nama": "Guru Bahasa Inggris", "peran": "Pendamping", "inisial": "ENG", "foto": "" },
+    { "nama": "Guru Olahraga", "peran": "PJOK", "inisial": "OR", "foto": "" },
+    { "nama": "Tenaga Operasional", "peran": "Tata Usaha", "inisial": "OP", "foto": "" },
+    { "nama": "Penjaga Sekolah", "peran": "Keamanan", "inisial": "PS", "foto": "" }
+  ],
+  "ekskul": [
+    { "ikon": "🛡️", "judul": "Pramuka", "teks": "Kegiatan wajib pembinaan karakter: kedisiplinan, kemandirian, kerja sama, dan cinta alam melalui kegiatan rutin mingguan.", "foto": "" },
+    { "ikon": "🕌", "judul": "BTQ & Tahfidz", "teks": "Baca Tulis Al-Qur'an dan hafalan surat pendek, dibina rutin setiap pekan.", "foto": "" },
+    { "ikon": "🎼", "judul": "Karawitan", "teks": "Pelestarian seni gamelan Jawa tradisional — latihan rutin dan tampil di acara sekolah.", "foto": "" },
+    { "ikon": "⚽", "judul": "Futsal & Voli", "teks": "Pembinaan olahraga tim untuk kesehatan fisik, sportivitas, dan kerja sama.", "foto": "" },
+    { "ikon": "🎨", "judul": "Seni Tari & Rupa", "teks": "Tari daerah, melukis, dan kriya tangan untuk mengasah kreativitas.", "foto": "" },
+    { "ikon": "🌿", "judul": "Pecinta Alam", "teks": "Piket kebersihan, merawat tanaman, dan bank sampah sekolah.", "foto": "" }
+  ],
+  "kalender": {
+    "ganjil": [
+      "MPLS — minggu pertama masuk sekolah",
+      "P5 tema Kebhinekaan & kearifan lokal",
+      "Asesmen sumatif tengah semester",
+      "Asesmen sumatif akhir semester ganjil"
+    ],
+    "genap": [
+      "Kegiatan BP/BK & penguatan literasi",
+      "P5 tema rekayasa & teknologi",
+      "Asesmen sumatif akhir tahun",
+      "Pekan apresiasi seni & karya siswa"
+    ],
+    "libur": [
+      "Libur semester & libur akhir tahun",
+      "Peringatan hari nasional & perayaan hari besar",
+      "Pesantren kilat & peringatan besar Islam",
+      "Pentas seni akhir tahun ajaran"
+    ]
+  },
+  "kalenderSekolah": [
+    { "tanggal": "14 Juli 2025", "kegiatan": "Awal masuk semester 1 & MPLS" },
+    { "tanggal": "17 Agustus 2025", "kegiatan": "Peringatan HUT ke-80 Kemerdekaan RI & lomba antar kelas" },
+    { "tanggal": "10 November 2025", "kegiatan": "Peringatan Hari Pahlawan" },
+    { "tanggal": "22–26 September 2025", "kegiatan": "Asesmen sumatif tengah semester" },
+    { "tanggal": "25 November 2025", "kegiatan": "Hari Guru Nasional — perayaan bersama" },
+    { "tanggal": "8–13 Desember 2025", "kegiatan": "Asesmen sumatif akhir semester 1" },
+    { "tanggal": "22 Des 2025 – 3 Jan 2026", "kegiatan": "Libur semester 1" },
+    { "tanggal": "7 Januari 2026", "kegiatan": "Awal masuk semester 2" },
+    { "tanggal": "17 Februari 2026", "kegiatan": "Peringatan Isra Mikraj & tahun baru Hijriah" },
+    { "tanggal": "16–22 Maret 2026", "kegiatan": "Pesantren kilat & peringatan hari besar Islam" },
+    { "tanggal": "1–6 Juni 2026", "kegiatan": "Asesmen akhir tahun & pentas seni" },
+    { "tanggal": "20 Juni 2026", "kegiatan": "Pembagian rapor semester 2" }
+  ],
+  "jadwal": {
+    "1": [
+      { "h": "Senin", "j": "07.00–09.30", "k": "Tematik: Bahasa Indonesia" },
+      { "h": "Senin", "j": "10.00–12.00", "k": "Matematika" },
+      { "h": "Selasa", "j": "07.00–09.30", "k": "Tematik: IPAS" },
+      { "h": "Selasa", "j": "10.00–12.00", "k": "PJOK" },
+      { "h": "Rabu", "j": "07.00–09.30", "k": "Pendidikan Agama & BP" },
+      { "h": "Rabu", "j": "10.00–12.00", "k": "Seni Budaya" },
+      { "h": "Kamis", "j": "07.00–09.30", "k": "Tematik: Matematika" },
+      { "h": "Kamis", "j": "10.00–12.00", "k": "Bahasa Inggris" },
+      { "h": "Jumat", "j": "07.00–09.00", "k": "Pendidikan Pancasila" },
+      { "h": "Jumat", "j": "09.00–10.30", "k": "Bahasa Jawa" }
+    ],
+    "2": [
+      { "h": "Senin", "j": "07.00–09.30", "k": "Tematik: Bahasa Indonesia" },
+      { "h": "Senin", "j": "10.00–12.00", "k": "Matematika" },
+      { "h": "Selasa", "j": "07.00–09.30", "k": "Pendidikan Agama & BP" },
+      { "h": "Selasa", "j": "10.00–12.00", "k": "Tematik: IPAS" },
+      { "h": "Rabu", "j": "07.00–09.30", "k": "Matematika" },
+      { "h": "Rabu", "j": "10.00–12.00", "k": "PJOK" },
+      { "h": "Kamis", "j": "07.00–09.30", "k": "Tematik: Seni Budaya" },
+      { "h": "Kamis", "j": "10.00–12.00", "k": "Bahasa Inggris" },
+      { "h": "Jumat", "j": "07.00–09.00", "k": "Pendidikan Pancasila" },
+      { "h": "Jumat", "j": "09.00–10.30", "k": "Bahasa Jawa" }
+    ],
+    "3": [
+      { "h": "Senin", "j": "07.00–09.00", "k": "Bahasa Indonesia" },
+      { "h": "Senin", "j": "09.15–11.00", "k": "Matematika" },
+      { "h": "Senin", "j": "11.00–12.00", "k": "PJOK" },
+      { "h": "Selasa", "j": "07.00–09.00", "k": "Pendidikan Agama & BP" },
+      { "h": "Selasa", "j": "09.15–11.00", "k": "IPAS" },
+      { "h": "Selasa", "j": "11.00–12.00", "k": "Bahasa Inggris" },
+      { "h": "Rabu", "j": "07.00–09.00", "k": "Matematika" },
+      { "h": "Rabu", "j": "09.15–11.00", "k": "Bahasa Indonesia" },
+      { "h": "Rabu", "j": "11.00–12.00", "k": "P5" },
+      { "h": "Kamis", "j": "07.00–09.00", "k": "IPAS" },
+      { "h": "Kamis", "j": "09.15–11.00", "k": "Seni Budaya" },
+      { "h": "Kamis", "j": "11.00–12.00", "k": "PJOK" },
+      { "h": "Jumat", "j": "07.00–08.45", "k": "Pendidikan Pancasila" },
+      { "h": "Jumat", "j": "08.45–10.30", "k": "Bahasa Jawa" }
+    ],
+    "4": [
+      { "h": "Senin", "j": "07.00–09.00", "k": "Matematika" },
+      { "h": "Senin", "j": "09.15–11.00", "k": "Bahasa Indonesia" },
+      { "h": "Senin", "j": "11.00–12.00", "k": "IPAS" },
+      { "h": "Selasa", "j": "07.00–09.00", "k": "Pendidikan Agama & BP" },
+      { "h": "Selasa", "j": "09.15–11.00", "k": "Bahasa Inggris" },
+      { "h": "Selasa", "j": "11.00–12.00", "k": "Matematika" },
+      { "h": "Rabu", "j": "07.00–09.00", "k": "Bahasa Indonesia" },
+      { "h": "Rabu", "j": "09.15–11.00", "k": "IPAS" },
+      { "h": "Rabu", "j": "11.00–12.00", "k": "PJOK" },
+      { "h": "Kamis", "j": "07.00–09.00", "k": "Seni Budaya" },
+      { "h": "Kamis", "j": "09.15–11.00", "k": "Matematika" },
+      { "h": "Kamis", "j": "11.00–12.00", "k": "P5" },
+      { "h": "Jumat", "j": "07.00–08.45", "k": "Pendidikan Pancasila" },
+      { "h": "Jumat", "j": "08.45–10.30", "k": "Bahasa Jawa" }
+    ],
+    "5": [
+      { "h": "Senin", "j": "07.00–09.00", "k": "Bahasa Indonesia" },
+      { "h": "Senin", "j": "09.15–11.00", "k": "Matematika" },
+      { "h": "Senin", "j": "11.00–12.00", "k": "IPAS" },
+      { "h": "Selasa", "j": "07.00–09.00", "k": "Pendidikan Agama & BP" },
+      { "h": "Selasa", "j": "09.15–11.00", "k": "Matematika" },
+      { "h": "Selasa", "j": "11.00–12.00", "k": "PJOK" },
+      { "h": "Rabu", "j": "07.00–09.00", "k": "Bahasa Inggris" },
+      { "h": "Rabu", "j": "09.15–11.00", "k": "Bahasa Indonesia" },
+      { "h": "Rabu", "j": "11.00–12.00", "k": "P5" },
+      { "h": "Kamis", "j": "07.00–09.00", "k": "IPAS" },
+      { "h": "Kamis", "j": "09.15–11.00", "k": "Seni Budaya" },
+      { "h": "Kamis", "j": "11.00–12.00", "k": "Matematika" },
+      { "h": "Jumat", "j": "07.00–08.45", "k": "Pendidikan Pancasila" },
+      { "h": "Jumat", "j": "08.45–10.30", "k": "Bahasa Jawa" }
+    ],
+    "6": [
+      { "h": "Senin", "j": "07.00–09.00", "k": "Matematika" },
+      { "h": "Senin", "j": "09.15–11.00", "k": "Bahasa Indonesia" },
+      { "h": "Senin", "j": "11.00–12.00", "k": "IPAS" },
+      { "h": "Selasa", "j": "07.00–09.00", "k": "Pendidikan Agama & BP" },
+      { "h": "Selasa", "j": "09.15–11.00", "k": "Bahasa Indonesia" },
+      { "h": "Selasa", "j": "11.00–12.00", "k": "Matematika" },
+      { "h": "Rabu", "j": "07.00–09.00", "k": "Bahasa Inggris" },
+      { "h": "Rabu", "j": "09.15–11.00", "k": "IPAS" },
+      { "h": "Rabu", "j": "11.00–12.00", "k": "P5" },
+      { "h": "Kamis", "j": "07.00–09.00", "k": "Matematika" },
+      { "h": "Kamis", "j": "09.15–11.00", "k": "Bahasa Indonesia" },
+      { "h": "Kamis", "j": "11.00–12.00", "k": "Seni Budaya" },
+      { "h": "Jumat", "j": "07.00–08.45", "k": "Pendidikan Pancasila" },
+      { "h": "Jumat", "j": "08.45–10.30", "k": "Bahasa Jawa" }
+    ]
+  },
+  "unduhan": [
+    { "judul": "Formulir Pendaftaran PPDB", "deskripsi": "Formulir pendaftaran peserta didik baru — unduh, cetak, isi, lalu bawa saat verifikasi berkas di sekolah.", "url": "" },
+    { "judul": "Jadwal Pelajaran Semester Ini", "deskripsi": "Rekap jadwal pelajaran kelas 1–6 dalam satu berkas siap cetak.", "url": "" }
+  ],
+  "berita": [
+    { "id": "b1", "kategori": "Prestasi", "judul": "Siswa SDN 2 Klambu Raih Juara di O2SN Tingkat Kabupaten", "isi": "Perwakilan kelas VI berhasil membawa pulang medali pada ajang Olimpiade Olahraga Siswa Nasional tingkat Kabupaten Grobogan.", "tanggal": "2025-11-14", "emoji": "🏆", "grad": "1", "foto": "" },
+    { "id": "b2", "kategori": "Pembelajaran", "judul": "Gerakan Literasi: Pojok Baca Setiap Kelas Diramaikan", "isi": "Pembiasaan membaca 15 menit sebelum pembelajaran berjalan efektif — koleksi buku bertambah dari komite dan donatur.", "tanggal": "2025-11-05", "emoji": "📖", "grad": "2", "foto": "" },
+    { "id": "b3", "kategori": "Lingkungan", "judul": "Sekolah Adiwiyata: Gerakan Memilah & Menanam", "isi": "Siswa dibiasakan memilah sampah dan merawat tanaman sekolah sebagai wujud kepedulian lingkungan sejak dini.", "tanggal": "2025-10-28", "emoji": "🌱", "grad": "3", "foto": "" },
+    { "id": "b4", "kategori": "Kegiatan", "judul": "Upacara & Lomba Peringatan Hari Pahlawan", "isi": "Peringatan Hari Pahlawan dirangkaikan lomba antar kelas: mewarnai, cerdas cermat, dan pidato singkat.", "tanggal": "2025-11-10", "emoji": "🚩", "grad": "1", "foto": "" },
+    { "id": "b5", "kategori": "Kesehatan", "judul": "Pemeriksaan Kesehatan Berkala bersama Puskesmas Klambu", "isi": "Program UKS rutin: pengukuran tinggi-berat badan, pemeriksaan gigi, dan edukasi cuci tangan.", "tanggal": "2025-10-21", "emoji": "🩺", "grad": "4", "foto": "" },
+    { "id": "b6", "kategori": "Pengumuman", "judul": "Rapat Komite & Sosialisasi Program Semester", "isi": "Rapat komite sekolah membahas program semester genap dan rencana kegiatan bersama orang tua.", "tanggal": "2025-10-15", "emoji": "📢", "grad": "5", "foto": "" }
+  ],
+  "galeri": [
+    { "id": "g1", "judul": "Upacara Bendera Senin", "deskripsi": "Pembiasaan upacara bendera setiap Senin pagi untuk menumbuhkan semangat kebangsaan.", "emoji": "🚩", "grad": "1", "foto": "" },
+    { "id": "g2", "judul": "Kelas Tematik Kelas 4", "deskripsi": "Pembelajaran IPAS dengan praktik langsung di lingkungan sekolah.", "emoji": "📚", "grad": "2", "foto": "" },
+    { "id": "g3", "judul": "Lomba Layang-Layang 17 Agustus", "deskripsi": "Meriahnya lomba layang-layang antar kelas dalam rangkaian HUT ke-RI.", "emoji": "🪁", "grad": "3", "foto": "" },
+    { "id": "g4", "judul": "Senam Sehat Bersama", "deskripsi": "Senam rutin Jumat pagi untuk kebugaran jasmani semua siswa.", "emoji": "🤸", "grad": "4", "foto": "" },
+    { "id": "g5", "judul": "Pojok Baca Perpustakaan", "deskripsi": "Peserta didik antre membaca buku favorit di pojok baca perpustakaan mini.", "emoji": "📖", "grad": "5", "foto": "" },
+    { "id": "g6", "judul": "Penanaman Pohon di Halaman Sekolah", "deskripsi": "Program sekolah hijau: setiap kelas merawat tanaman di lingkungan sekolah.", "emoji": "🌳", "grad": "6", "foto": "" },
+    { "id": "g7", "judul": "Pentas Seni Akhir Tahun", "deskripsi": "Penampilan tari, hadrah, dan paduan suara dalam pentas seni akhir tahun ajaran.", "emoji": "🎭", "grad": "2", "foto": "" },
+    { "id": "g8", "judul": "Perkemahan Pramuka (Persami)", "deskripsi": "Kegiatan persami: tali-temali, api unggun, dan berkemah.", "emoji": "⛺", "grad": "1", "foto": "" },
+    { "id": "g9", "judul": "Pemeriksaan Kesehatan UKS", "deskripsi": "Pemeriksaan berkala bersama Puskesmas Klambu melalui program UKS.", "emoji": "🩺", "grad": "4", "foto": "" }
+  ],
+  "ppdb": {
+    "tajuk": "PPDB Online",
+    "judul": "Penerimaan Peserta Didik Baru",
+    "sub": "PPDB SD Negeri 2 Klambu — Tahun Ajaran 2026/2027.",
+    "alur": [
+      { "judul": "Siapkan Dokumen", "teks": "Siapkan KK, Akta Kelahiran, dan KIA — cukup bawa salinan/versi digitalnya." },
+      { "judul": "Isi Formulir", "teks": "Isi data calon peserta didik pada formulir online di bawah atau datang langsung ke sekolah." },
+      { "judul": "Verifikasi", "teks": "Panitia PPDB memverifikasi berkas lalu menghubungi orang tua via WhatsApp untuk konfirmasi." },
+      { "judul": "Pengumuman", "teks": "Hasil seleksi diumumkan via website ini dan papan pengumuman sekolah, lalu daftar ulang." }
+    ],
+    "jadwal": [
+      { "label": "Pembukaan pendaftaran", "nilai": "1 Juni 2026" },
+      { "label": "Akhir pendaftaran", "nilai": "30 Juni 2026" },
+      { "label": "Pengumuman hasil", "nilai": "5 Juli 2026" },
+      { "label": "Daftar ulang & MPLS", "nilai": "Mid Juli 2026" }
+    ],
+    "dokumen": [
+      "Fotokopi Akta Kelahiran (dibawa asli saat verifikasi)",
+      "Fotokopi Kartu Keluarga (KK)",
+      "Fotokopi KIA / Kartu Identitas Anak",
+      "Pas foto berwarna 3×4 (2 lembar)",
+      "Surat keterangan lulus TK (opsional)"
+    ],
+    "faq": [
+      { "q": "Apa saja syarat usia untuk mendaftar kelas 1?", "a": "Usia minimal 6 tahun per 1 Juli tahun pendaftaran. Anak yang belum genap dapat mengikuti seleksi kesiapan belajar sesuai ketentuan dinas." },
+      { "q": "Apakah ada biaya pendaftaran?", "a": "Tidak ada. Pendidikan pada satuan pendidikan negeri tidak dipungut biaya pendaftaran; sesuai amanat Undang-Undang, 8 tahun wajib belajar berlaku untuk semua." },
+      { "q": "Bisakah mendaftar dari luar wilayah desa?", "a": "Bisa. Calon peserta didik dari luar desa tetap diterima selama daya tampung tersedia, dengan memperhatikan prioritas jarak tempuh." },
+      { "q": "Kapan pengumuman hasil seleksi?", "a": "Diinformasikan melalui WhatsApp panitia dan papan pengumuman sekolah, biasanya sepekan setelah pendaftaran ditutup." }
+    ]
+  },
+  "kontak": {
+    "alamat": "Jl. Jatidiri, Desa Klambu, Kec. Klambu, Kab. Grobogan, Jawa Tengah 58154",
+    "email": "sdn2klambu@gmail.com",
+    "jam": "Senin–Kamis, 07.00–14.00 WIB"
+  }
+}

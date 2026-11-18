@@ -132,7 +132,7 @@
 </section>
 
 <!-- ===== Form Pendaftaran ===== -->
-<section class="block">
+<section class="block" data-ppdb-gate>
   <div class="container" style="max-width:860px">
     <div class="section-head center" style="text-align:center">
       <span class="eyebrow">PPDB Online</span>
@@ -183,36 +183,92 @@
           💡 Setelah formulir dikirim, tim PPDB menghubungi Anda dalam 1–2 hari kerja. Bawa dokumen asli saat verifikasi di sekolah.
         </div>
         <button type="submit" class="btn-submit">Kirim Pendaftaran</button>
-        <p id="ppdb-msg" role="status" style="display:none;margin-top:12px;font-weight:700;color:var(--hijau-700);text-align:center">✓ Pendaftaran terkirim! Panitia akan menghubungi Anda via WhatsApp.</p>
+        <p id="ppdb-msg" role="status" style="display:none;margin-top:12px;font-weight:700;color:var(--hijau-700);text-align:center"></p>
+      </form>
+    </div>
+
+    <!-- Bukti pendaftaran (keluar setelah submit) -->
+    <div class="card" id="bukti" style="display:none;margin-top:22px;padding:32px" data-cetak-area>
+      <div style="text-align:center;margin-bottom:18px">
+        <img src="assets/img/logo.svg" alt="Logo" style="width:64px;height:64px;margin:0 auto 8px">
+        <h3 style="margin:0">Bukti Pendaftaran PPDB</h3>
+        <p class="muted" style="margin:2px 0 0;font-size:.9rem">SD Negeri 2 Klambu — NPSN 20314372</p>
+      </div>
+      <table style="width:100%;font-size:.94rem;border-collapse:collapse">
+        <tbody>
+          <tr><td style="padding:7px 0;color:var(--mute)">Nomor Pendaftaran</td><td style="text-align:right"><b id="bk-nomor" style="font-size:1.1rem;color:var(--hijau-800)">—</b></td></tr>
+          <tr><td style="padding:7px 0;color:var(--mute)">Nama Calon Siswa</td><td style="text-align:right" id="bk-nama">—</td></tr>
+          <tr><td style="padding:7px 0;color:var(--mute)">Jenis Kelamin</td><td style="text-align:right" id="bk-jk">—</td></tr>
+          <tr><td style="padding:7px 0;color:var(--mute)">Tanggal Lahir</td><td style="text-align:right" id="bk-ttl">—</td></tr>
+          <tr><td style="padding:7px 0;color:var(--mute)">Orang Tua / Wali</td><td style="text-align:right" id="bk-ortu">—</td></tr>
+          <tr><td style="padding:7px 0;color:var(--mute)">No. WhatsApp</td><td style="text-align:right" id="bk-wa">—</td></tr>
+          <tr><td style="padding:7px 0;color:var(--mute)">Status</td><td style="text-align:right" id="bk-status">Menunggu verifikasi</td></tr>
+        </tbody>
+      </table>
+      <div class="note" style="margin-top:16px">📌 Simpan/Catat nomor pendaftaran Anda — dibutuhkan untuk <b>cek status</b>. Cetak atau simpan bukti ini sebagai tanda terima.</div>
+      <button type="button" class="btn-submit" onclick="window.print()" style="background:var(--hijau-800)">🖨️ Cetak Bukti / Simpan PDF</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PPDB Ditutup ===== -->
+<section class="block" data-ppdb-tutup style="display:none">
+  <div class="container" style="max-width:720px">
+    <div class="card center" style="padding:48px 32px">
+      <div style="font-size:3.4rem">🔔</div>
+      <h2 style="margin:10px 0 8px">Pendaftaran Sedang Ditutup</h2>
+      <p class="muted">Mohon maaf, formulir PPDB online sedang ditutup oleh panitia. Silakan pantau halaman ini atau hubungi sekolah untuk mengetahui jadwal pembukaan berikutnya.</p>
+      <div style="margin-top:18px"><a class="btn btn-gold" href="kontak.html" style="background:var(--hijau-800);color:#fff">Hubungi Sekolah →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Cek Status ===== -->
+<section class="block" style="background:var(--hijau-50)">
+  <div class="container" style="max-width:860px">
+    <div class="section-head center" style="text-align:center">
+      <span class="eyebrow">Sudah mendaftar?</span>
+      <h2>Cek Status Pendaftaran</h2>
+      <p>Masukkan nomor pendaftaran dan tanggal lahir calon siswa.</p>
+    </div>
+    <div class="card" style="padding:28px">
+      <form id="form-cek" novalidate>
+        <div class="grid grid-2" style="gap:14px">
+          <div>
+            <label for="cek-nomor">Nomor Pendaftaran *</label>
+            <input type="text" id="cek-nomor" required placeholder="cth: PPDB-2026-0001">
+          </div>
+          <div>
+            <label for="cek-ttl">Tanggal Lahir Calon Siswa *</label>
+            <input type="date" id="cek-ttl" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">🔍 Cek Status</button>
+        <p id="cek-msg" role="status" style="display:none;margin-top:14px;text-align:center;font-weight:700"></p>
+        <div id="cek-hasil" style="display:none;margin-top:14px" data-cetak-area>
+          <table style="width:100%;font-size:.94rem;border-collapse:collapse">
+            <tbody>
+              <tr><td style="padding:7px 0;color:var(--mute)">Nomor</td><td style="text-align:right" id="cs-nomor">—</td></tr>
+              <tr><td style="padding:7px 0;color:var(--mute)">Nama</td><td style="text-align:right" id="cs-nama">—</td></tr>
+              <tr><td style="padding:7px 0;color:var(--mute)">Orang Tua</td><td style="text-align:right" id="cs-ortu">—</td></tr>
+              <tr><td style="padding:7px 0;color:var(--mute)">Status</td><td style="text-align:right" id="cs-status">—</td></tr>
+            </tbody>
+          </table>
+          <button type="button" class="btn-submit" onclick="window.print()" style="background:var(--hijau-800)">🖨️ Cetak</button>
+        </div>
       </form>
     </div>
   </div>
 </section>
 
 <!-- ===== FAQ ===== -->
-<section class="block" style="background:var(--hijau-50)">
+<section class="block">
   <div class="container" style="max-width:860px">
     <div class="section-head center" style="text-align:center">
       <span class="eyebrow">Pertanyaan populer</span>
       <h2>FAQ PPDB</h2>
     </div>
-    <div class="faq">
-      <details>
-        <summary>Apa saja syarat usia untuk mendaftar kelas 1?</summary>
-        <div class="faq-body">Usia minimal 6 tahun per 1 Juli tahun pendaftaran. Anak yang belum genap dapat mengikuti seleksi kesiapan belajar sesuai ketentuan dinas.</div>
-      </details>
-      <details>
-        <summary>Apakah ada biaya pendaftaran?</summary>
-        <div class="faq-body">Tidak ada. Pendidikan pada satuan pendidikan negeri tidak dipungut biaya pendaftaran; sesuai amanat Undang-Undang, 8 tahun wajib belajar berlaku untuk semua.</div>
-      </details>
-      <details>
-        <summary>Bisakah mendaftar dari luar wilayah desa?</summary>
-        <div class="faq-body">Bisa. Calon peserta didik dari luar desa tetap diterima selama daya tampung tersedia, dengan memperhatikan prioritas jarak tempuh.</div>
-      </details>
-      <details>
-        <summary>Kapan pengumuman hasil seleksi?</summary>
-        <div class="faq-body">Diinformasikan melalui WhatsApp panitia dan papan pengumuman sekolah, biasanya sepekan setelah pendaftaran ditutup.</div>
-      </details>
+    <div class="faq" data-bind-container="ppdb.faq">
     </div>
   </div>
 </section>
@@ -259,20 +315,98 @@
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2025</span> SD Negeri 2 Klambu</span>
-      <span>Melayani dengan hati, mendidik untuk masa depan.</span>
+      <span>Designed by Kang Zaed</span>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/konten-publik.js"></script>
 <script>
-// Simulasi submit PPDB — kirim ke WhatsApp panitia
-document.getElementById('form-ppdb').addEventListener('submit', function (e) {
+// ===== Logika form PPDB + cek status =====
+const isLocal = location.hostname === "127.0.0.1" || location.hostname === "localhost";
+
+// ---------- Form Pendaftaran ----------
+document.getElementById("form-ppdb").addEventListener("submit", async function (e) {
   e.preventDefault();
+  if (!this.checkValidity()) { this.reportValidity(); return; }
   const f = new FormData(this);
-  const pesan = `*PENDAFTARAN PPDB SDN 2 KLAMBU*%0A%0ANama: ${f.get('nama')}%0AJK: ${f.get('jk')}%0ATTL: ${f.get('ttl')}%0AAsal TK: ${f.get('asal') || '-'}%0AOrang tua: ${f.get('ortu')}%0AWA: ${f.get('wa')}%0AAlamat: ${f.get('alamat')}`;
-  document.getElementById('ppdb-msg').style.display = 'block';
-  this.querySelector('.btn-submit').textContent = '✓ Terkirim';
+  const payload = {
+    nama: f.get("nama"), jk: f.get("jk"), ttl: f.get("ttl"),
+    asal: f.get("asal") || "", ortu: f.get("ortu"), wa: f.get("wa"),
+    alamat: f.get("alamat"), catatan: f.get("catatan") || ""
+  };
+  try {
+    if (!isLocal) {
+      const r = await fetch("/api/konten?act=daftar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || "Gagal mengirim.");
+      tampilBukti(payload, j.nomor);
+    } else {
+      tampilBukti(payload, "PPDB-LOKAL-UJI");
+    }
+  } catch (err) {
+    const msg = document.getElementById("ppdb-msg");
+    msg.style.display = "block";
+    msg.style.color = "#B42318";
+    msg.textContent = "✗ " + err.message;
+  }
+});
+
+function tampilBukti(p, nomor) {
+  document.getElementById("bk-nomor").textContent = nomor;
+  document.getElementById("bk-nama").textContent = p.nama;
+  document.getElementById("bk-jk").textContent = p.jk;
+  document.getElementById("bk-ttl").textContent = p.ttl;
+  document.getElementById("bk-ortu").textContent = p.ortu;
+  document.getElementById("bk-wa").textContent = p.wa;
+  const bukti = document.getElementById("bukti");
+  bukti.style.display = "block";
+  bukti.scrollIntoView({ behavior: "smooth", block: "start" });
+  const btn = document.querySelector("#form-ppdb .btn-submit");
+  if (btn) { btn.textContent = "✓ Terkirim"; }
+}
+
+// ---------- Cek Status ----------
+document.getElementById("form-cek").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  if (!this.checkValidity()) { this.reportValidity(); return; }
+  const nomor = document.getElementById("cek-nomor").value.trim();
+  const ttl = document.getElementById("cek-ttl").value;
+  const msg = document.getElementById("cek-msg");
+  const hasil = document.getElementById("cek-hasil");
+  msg.style.display = "block";
+  msg.style.color = "var(--mute)";
+  msg.textContent = "Mencari data…";
+  hasil.style.display = "none";
+  try {
+    let p;
+    if (!isLocal) {
+      const r = await fetch("/api/konten?act=cek", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nomor, ttl })
+      });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || "Tidak ditemukan.");
+      p = j.p;
+    } else {
+      p = { nomor, nama: "MODE UJI (lokal)", ortu: "—", status: "Menunggu verifikasi" };
+    }
+    msg.style.display = "none";
+    document.getElementById("cs-nomor").textContent = p.nomor;
+    document.getElementById("cs-nama").textContent = p.nama;
+    document.getElementById("cs-ortu").textContent = p.ortu;
+    document.getElementById("cs-status").textContent = p.status;
+    hasil.style.display = "block";
+  } catch (err) {
+    msg.style.color = "#B42318";
+    msg.textContent = "✗ " + err.message;
+  }
 });
 </script>
 </body>
