@@ -79,6 +79,23 @@ label{font-size:.84rem;font-weight:700;display:block;margin:12px 0 5px}
 .toast{position:fixed;top:18px;right:18px;background:var(--hijau-800);color:#fff;padding:13px 20px;border-radius:12px;font-weight:700;font-size:.9rem;box-shadow:0 12px 30px rgba(0,0,0,.25);display:none;z-index:50;max-width:340px}
 .toast.err{background:var(--merah)}
 @media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr}}
+@media(max-width:840px){
+  .tabs{gap:5px}
+  .tabs button{padding:7px 11px;font-size:.78rem}
+  .card{padding:18px 16px}
+  .simpan-bar{position:static;box-shadow:none}
+  .simpan-bar .container{flex-direction:column;align-items:stretch;gap:10px}
+}
+@media(max-width:480px){
+  .login-box{padding:28px 22px}
+  .topbar .container{justify-content:center;text-align:center}
+}
+/* sentuhan nyaman di HP */
+@media (hover:none) and (pointer:coarse){
+  input,select,textarea,button{min-height:44px}
+  .tabs button{min-height:38px}
+  .foto-prev{width:64px;height:64px}
+}
 /* cetak */
 @media print{
   body *{visibility:hidden}
