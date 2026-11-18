@@ -230,6 +230,43 @@
       fab.href = `https://wa.me/${String(s.waNomor).replace(/[^0-9]/g, "")}?text=${encodeURIComponent(s.waTeks || "Assalamualaikum, saya ingin bertanya.")}`;
       if (!fab.isConnected) document.body.append(fab);
     } else if (fab) fab.remove();
+
+    pasangEditButtons();
+  }
+
+  // ============================================================
+  // Tombol pintas "✏️ Ubah" — hanya tampil jika admin pernah
+  // login di tab browser ini (flag localStorage oleh admin.html)
+  // ============================================================
+  function pasangEditButtons() {
+    let adminAda = false;
+    try { adminAda = sessionStorage.getItem("adm-pwd") !== null; } catch {}
+    if (!adminAda) return;
+    if (document.getElementById("admin-bar")) return;
+
+    const bar = document.createElement("div");
+    bar.id = "admin-bar";
+    bar.style.cssText = "position:fixed;bottom:64px;left:14px;z-index:85;display:flex;gap:8px;flex-wrap:wrap;max-width:70vw";
+    const items = [
+      ["kepsek", "✏️ Kepsek"],
+      ["guru", "✏️ Guru"],
+      ["galeri", "✏️ Galeri"],
+      ["berita", "✏️ Berita"],
+      ["program", "✏️ Program"],
+      ["ekskul", "✏️ Ekskul"],
+      ["jadwal", "✏️ Jadwal"],
+      ["unduhan", "✏️ Unduhan"],
+      ["ppdb", "📥 Pendaftar"],
+      ["pengaturan", "⚙️ Setelan"],
+    ];
+    items.forEach(([tab, label]) => {
+      const a = document.createElement("a");
+      a.href = "admin.html#" + tab;
+      a.textContent = label;
+      a.style.cssText = "background:#103B2A;color:#fff;font-size:.72rem;font-weight:700;padding:6px 10px;border-radius:999px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.3)";
+      bar.append(a);
+    });
+    document.body.append(bar);
   }
 
   async function muat() {

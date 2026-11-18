@@ -366,7 +366,23 @@ function masuk() {
   document.getElementById("login-wrap").style.display = "none";
   document.getElementById("app").style.display = "block";
   isiForm();
+  // dukung deep-link tabs: admin.html#kepsek / #guru / #galeri / #berita / #ppdb dll.
+  const hash = (location.hash || "").replace("#", "");
+  if (hash) {
+    const btn = document.querySelector(`#tabs button[data-tab="${hash}"]`);
+    if (btn) btn.click();
+  }
 }
+
+function bukaTab(nama) {
+  // dibuka dari halaman publik (konteks storage sama) langsung pindah tab
+  const btn = document.querySelector(`#tabs button[data-tab="${nama}"]`);
+  if (btn && document.getElementById("app").style.display !== "none") btn.click();
+}
+
+window.addEventListener("storage", e => {
+  if (e.key === "adm-buka-tab" && e.newValue) bukaTab(e.newValue);
+});
 
 document.getElementById("btn-keluar").addEventListener("click", () => {
   sessionStorage.removeItem("adm-pwd");

@@ -59,8 +59,10 @@
       <a href="index.html">Beranda</a>
       <a href="profil.html">Profil</a>
       <a href="akademik.html">Akademik</a>
+      <a href="jadwal.html">Jadwal</a>
       <a href="ppdb.html">PPDB</a>
       <a href="berita.html">Berita</a>
+      <a href="unduhan.html">Unduhan</a>
       <a href="galeri.html" class="active">Galeri</a>
       <a href="kontak.html">Kontak</a>
       <a href="ppdb.html" class="btn-ppdb">Daftar PPDB</a>
@@ -83,44 +85,7 @@
 <!-- ===== Galeri ===== -->
 <section class="block">
   <div class="container">
-    <div class="gal-grid">
-      <button class="gal-item" data-title="Upacara Bendera Senin" data-desc="Pembiasaan upacara bendera setiap Senin pagi untuk menumbuhkan semangat kebangsaan.">
-        <div class="gal-ph gal-grad-1">🚩</div>
-        <span class="gal-cap">Upacara Bendera Senin</span>
-      </button>
-      <button class="gal-item" data-title="Kelas Tematik Kelas 4" data-desc="Pembelajaran IPAS dengan praktik langsung di lingkungan sekolah.">
-        <div class="gal-ph gal-grad-2">📚</div>
-        <span class="gal-cap">Kelas Tematik Kelas 4</span>
-      </button>
-      <button class="gal-item" data-title="Lomba Layang-Layang 17 Agustus" data-desc="Meriahnya lomba layang-layang antar kelas dalam rangkaian HUT ke-RI.">
-        <div class="gal-ph gal-grad-3">🪁</div>
-        <span class="gal-cap">Lomba 17 Agustus</span>
-      </button>
-      <button class="gal-item" data-title="Senam Sehat Bersama" data-desc="Senam rutin Jumat pagi untuk kebugaran jasmani semua siswa.">
-        <div class="gal-ph gal-grad-4">🤸</div>
-        <span class="gal-cap">Senam Sehat Jumat</span>
-      </button>
-      <button class="gal-item" data-title="Pojok Baca Perpustakaan" data-desc="Peserta didik antre membaca buku favorit di pojok baca perpustakaan mini.">
-        <div class="gal-ph gal-grad-5">📖</div>
-        <span class="gal-cap">Pojok Baca</span>
-      </button>
-      <button class="gal-item" data-title="Penanaman Pohon di Halaman Sekolah" data-desc="Program sekolah hijau: setiap kelas merawat tanaman di lingkungan sekolah.">
-        <div class="gal-ph gal-grad-6">🌳</div>
-        <span class="gal-cap">Penanaman Pohon</span>
-      </button>
-      <button class="gal-item" data-title="Pentas Seni Akhir Tahun" data-desc="Penampilan tari, hadrah, dan paduan suara dalam pentas seni akhir tahun ajaran.">
-        <div class="gal-ph gal-grad-2">🎭</div>
-        <span class="gal-cap">Pentas Seni</span>
-      </button>
-      <button class="gal-item" data-title="Perkemahan Pramuka (Persami)" data-desc="Kegiatan persami kemah wajib: tali-temali, api unggun, dan berkemah.">
-        <div class="gal-ph gal-grad-1">⛺</div>
-        <span class="gal-cap">Persami Pramuka</span>
-      </button>
-      <button class="gal-item" data-title="Pemeriksaan Kesehatan UKS" data-desc="Pemeriksaan berkala bersama Puskesmas Klambu melalui program UKS.">
-        <div class="gal-ph gal-grad-4">🩺</div>
-        <span class="gal-cap">UKS &amp; Puskesmas</span>
-      </button>
-    </div>
+    <div class="gal-grid" data-bind-container="galeri"></div>
   </div>
 </section>
 
@@ -129,6 +94,7 @@
   <div class="lb-box">
     <button class="lb-close" id="lb-close" aria-label="Tutup">×</button>
     <div class="lb-emoji" id="lb-emoji">📷</div>
+    <img id="lb-img" alt="Foto besar" style="display:none;width:100%;border-radius:10px;margin-bottom:10px;max-height:60vh;object-fit:contain">
     <h3 id="lb-title" style="margin-bottom:8px">Judul</h3>
     <p id="lb-desc" class="muted" style="font-size:.94rem">Deskripsi.</p>
   </div>
@@ -182,21 +148,10 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/konten-publik.js"></script>
 <script>
-// Lightbox sederhana
+// Lightbox: konten dirender oleh js/konten-publik.js
 const lb = document.getElementById('lb');
-const lbTitle = document.getElementById('lb-title');
-const lbDesc = document.getElementById('lb-desc');
-const lbEmoji = document.getElementById('lb-emoji');
-document.querySelectorAll('.gal-item').forEach(btn => {
-  btn.addEventListener('click', () => {
-    lbTitle.textContent = btn.dataset.title;
-    lbDesc.textContent = btn.dataset.desc;
-    lbEmoji.textContent = btn.querySelector('.gal-ph').textContent;
-    lb.classList.add('open');
-    document.getElementById('lb-close').focus();
-  });
-});
 document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
 lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
