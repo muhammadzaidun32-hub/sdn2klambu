@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Admin — SDN 2 Klambu</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --hijau-900:#103B2A;--hijau-800:#1B5E43;--hijau-700:#257A54;--hijau-100:#DCEFE4;--hijau-50:#F1F8F3;
+  --emas-500:#F2B33D;--ink:#22302B;--mute:#5C6B65;--line:#E2E9E5;--bg:#F6F9F7;--merah:#B42318;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{color:var(--hijau-900);line-height:1.3}
+button{font:inherit;cursor:pointer}
+input,select,textarea{width:100%;padding:10px 12px;border:1.6px solid #D8DEDB;border-radius:9px;font:inherit;font-size:.94rem;background:#fff}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--hijau-700);box-shadow:0 0 0 3px rgba(46,139,87,.15)}
+label{font-size:.84rem;font-weight:700;display:block;margin:12px 0 5px}
+
+/* login */
+#login-wrap{min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#134B33,#1B5E43 55%,#2E8B57);padding:20px}
+.login-box{background:#fff;border-radius:18px;padding:38px 34px;width:100%;max-width:400px;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.login-box img{width:66px;height:66px;margin:0 auto 12px;display:block}
+.login-box h1{text-align:center;font-size:1.25rem}
+.login-box p{text-align:center;color:var(--mute);font-size:.88rem;margin:6px 0 14px}
+
+/* app */
+#app{display:none;padding-bottom:60px}
+.topbar{background:var(--hijau-900);color:#D9E7E0;padding:12px 0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.topbar b{color:#fff}
+.btn-keluar{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);padding:7px 14px;border-radius:9px;font-weight:700;font-size:.84rem}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:20px 0;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5}
+.tabs button{border:1.6px solid var(--line);background:#fff;padding:8px 15px;border-radius:999px;font-weight:700;font-size:.85rem;color:var(--ink)}
+.tabs button.active{background:var(--hijau-800);color:#fff;border-color:var(--hijau-800)}
+.panel{display:none}
+.panel.active{display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px}
+.card h3{margin-bottom:4px;font-size:1.05rem}
+.card .desc{color:var(--mute);font-size:.85rem;margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:10px;font-weight:700;border:0;font-size:.92rem}
+.btn-utama{background:var(--hijau-800);color:#fff}
+.btn-utama:hover{background:var(--hijau-700)}
+.btn-emas{background:var(--emas-500);color:#3A2A05}
+.btn-bahaya{background:#FDECEC;color:var(--merah);border:1px solid #F5C6C2}
+.btn-kecil{padding:6px 12px;font-size:.8rem;border-radius:8px}
+.simpan-bar{
+  position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);
+  padding:12px 0;box-shadow:0 -6px 22px rgba(0,0,0,.08);z-index:20;
+}
+.simpan-bar .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.simpan-bar .info{font-size:.86rem;color:var(--mute)}
+.status{padding:5px 12px;border-radius:999px;font-size:.76rem;font-weight:800;display:inline-block}
+.st-antrian{background:var(--hijau-100);color:var(--hijau-800)}
+.st-terima{background:#E5F5EC;color:#1B7A43}
+.st-tolak{background:#FDECEC;color:var(--merah)}
+/* foto upload */
+.foto-row{display:flex;gap:14px;align-items:center;margin-top:10px}
+.foto-prev{width:78px;height:78px;border-radius:50%;background:var(--hijau-100);display:grid;place-items:center;overflow:hidden;font-weight:800;color:var(--hijau-800);flex:none;font-size:1.3rem}
+.foto-prev img{width:100%;height:100%;object-fit:cover}
+/* item list */
+.item-row{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;background:#fff}
+.item-row .head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.item-row .head b{font-size:.95rem}
+/* switch */
+.sw{position:relative;display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none}
+.sw input{position:absolute;opacity:0;width:0;height:0}
+.sw .track{width:46px;height:26px;background:#C9D4CF;border-radius:99px;position:relative;transition:.2s;flex:none}
+.sw .track::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.sw input:checked + .track{background:#2E8B57}
+.sw input:checked + .track::after{transform:translateX(20px)}
+.sw span.lbl{font-weight:700;font-size:.92rem}
+.toast{position:fixed;top:18px;right:18px;background:var(--hijau-800);color:#fff;padding:13px 20px;border-radius:12px;font-weight:700;font-size:.9rem;box-shadow:0 12px 30px rgba(0,0,0,.25);display:none;z-index:50;max-width:340px}
+.toast.err{background:var(--merah)}
+@media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr}}
+/* cetak */
+@media print{
+  body *{visibility:hidden}
+  #print-area, #print-area *{visibility:visible}
+  #print-area{position:absolute;top:0;left:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<div id="login-wrap">
+  <div class="login-box">
+    <img src="assets/img/logo.svg" alt="Logo">
+    <h1>Panel Admin SDN 2 Klambu</h1>
+    <p>Masukkan password admin untuk mengelola isi website.</p>
+    <form id="form-login">
+      <label for="pwd">Password Admin</label>
+      <input type="password" id="pwd" autocomplete="current-password" required placeholder="••••••••">
+      <button class="btn btn-utama" style="width:100%;justify-content:center;margin-top:16px" type="submit">🔐 Masuk</button>
+      <p id="login-err" style="color:var(--merah);display:none;font-size:.86rem;margin-top:10px"></p>
+    </form>
+    <p style="font-size:.78rem;color:var(--mute);margin-top:16px">← <a href="index.html" style="color:var(--hijau-800)">Kembali ke website</a></p>
+  </div>
+</div>
+
+<!-- ================= APP ================= -->
+<div id="app">
+  <div class="topbar">
+    <div class="container">
+      <span><b>Panel Admin</b> · SDN 2 Klambu</span>
+      <button class="btn-keluar" id="btn-keluar">Keluar</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tabs" id="tabs">
+      <button data-tab="ppdb" class="active">📥 Pendaftar PPDB</button>
+      <button data-tab="kepsek">👨‍🏫 Kepala Sekolah</button>
+      <button data-tab="guru">👥 Guru &amp; Staf</button>
+      <button data-tab="visimisi">🎯 Visi Misi &amp; Profil</button>
+      <button data-tab="program">📚 Program</button>
+      <button data-tab="ekskul">⚽ Ekstrakurikuler</button>
+      <button data-tab="berita">📰 Berita</button>
+      <button data-tab="galeri">🖼️ Galeri</button>
+      <button data-tab="jadwal">🗓️ Jadwal &amp; Kalender</button>
+      <button data-tab="unduhan">📎 Unduhan</button>
+      <button data-tab="pengaturan">⚙️ Pengaturan</button>
+    </div>
+
+    <!-- ===== PPDB ===== -->
+    <div class="panel active" data-panel="ppdb">
+      <div class="card">
+        <h3>Pendaftar PPDB</h3>
+        <p class="desc">Data orang tua yang mendaftar lewat website. Klik status untuk mengubahnya (Diterima / Ditolak / Menunggu).</p>
+        <div style="display:flex;gap:10px;margin:12px 0;flex-wrap:wrap">
+          <button class="btn btn-kecil btn-utama" id="ppdb-refresh">↻ Muat Ulang</button>
+          <button class="btn btn-kecil btn-emas" id="ppdb-unduh">⬇ Unduh CSV</button>
+        </div>
+        <div id="ppdb-list"></div>
+      </div>
+    </div>
+
+    <!-- ===== Kepsek ===== -->
+    <div class="panel" data-panel="kepsek">
+      <div class="card">
+        <h3>Foto &amp; Sambutan Kepala Sekolah</h3>
+        <p class="desc">Foto tampil di Sambutan (beranda) &amp; profil. Format JPG/PNG, disarankan foto persegi.</p>
+        <div class="foto-row">
+          <div class="foto-prev" id="kepsek-prev">👨‍🏫</div>
+          <div>
+            <input type="file" id="kepsek-foto" accept="image/*" style="max-width:260px">
+            <p style="font-size:.78rem;color:var(--mute);margin-top:6px">Klik "Pilih Foto" lalu tekan Simpan di bawah.</p>
+          </div>
+        </div>
+        <label>Nama Kepala Sekolah</label>
+        <input type="text" id="kepsek-nama">
+        <label>Jabatan</label>
+        <input type="text" id="kepsek-jabatan">
+        <label>Kutipan (tampil di kartu beranda)</label>
+        <textarea id="kepsek-kutipan" rows="2"></textarea>
+        <label>Sambutan Paragraf 1</label>
+        <textarea id="kepsek-s1" rows="3"></textarea>
+        <label>Sambutan Paragraf 2</label>
+        <textarea id="kepsek-s2" rows="3"></textarea>
+      </div>
+    </div>
+
+    <!-- ===== Guru ===== -->
+    <div class="panel" data-panel="guru">
+      <div class="card">
+        <h3>Guru &amp; Tenaga Kependidikan</h3>
+        <p class="desc">Ubah nama guru, unggah foto (klik kotak foto), tambah/hapus baris.</p>
+        <div id="guru-list"></div>
+        <button class="btn btn-kecil btn-emas" id="guru-tambah">+ Tambah Guru</button>
+      </div>
+    </div>
+
+    <!-- ===== Visi Misi ===== -->
+    <div class="panel" data-panel="visimisi">
+      <div class="card">
+        <h3>Visi</h3>
+        <textarea id="visi" rows="3"></textarea>
+        <h3 style="margin-top:18px">Misi (satu baris = satu misi)</h3>
+        <textarea id="misi" rows="6"></textarea>
+      </div>
+      <div class="card">
+        <h3>Tentang Sekolah (2 paragraf)</h3>
+        <textarea id="profil-0" rows="4" placeholder="Paragraf 1"></textarea>
+        <textarea id="profil-1" rows="4" placeholder="Paragraf 2" style="margin-top:10px"></textarea>
+        <h3 style="margin-top:18px">Sejarah Singkat</h3>
+        <textarea id="sejarah" rows="4"></textarea>
+      </div>
+    </div>
+
+    <!-- ===== Program ===== -->
+    <div class="panel" data-panel="program">
+      <div class="card">
+        <h3>Program Unggulan</h3>
+        <p class="desc">Kartu di beranda. Unggah foto (opsional) — jika kosong, ikon emoji yang tampil.</p>
+        <div id="program-list"></div>
+        <button class="btn btn-kecil btn-emas" id="program-tambah">+ Tambah Program</button>
+      </div>
+    </div>
+
+    <!-- ===== Ekskul ===== -->
+    <div class="panel" data-panel="ekskul">
+      <div class="card">
+        <h3>Ekstrakurikuler</h3>
+        <div id="ekskul-list"></div>
+        <button class="btn btn-kecil btn-emas" id="ekskul-tambah">+ Tambah Ekskul</button>
+      </div>
+    </div>
+
+    <!-- ===== Berita ===== -->
+    <div class="panel" data-panel="berita">
+      <div class="card">
+        <h3>Berita &amp; Pengumuman</h3>
+        <div id="berita-list"></div>
+        <button class="btn btn-kecil btn-emas" id="berita-tambah">+ Tulis Berita</button>
+      </div>
+    </div>
+
+    <!-- ===== Galeri ===== -->
+    <div class="panel" data-panel="galeri">
+      <div class="card">
+        <h3>Galeri Foto</h3>
+        <p class="desc">Foto bisa diklik pengunjung untuk memperbesar. Unggah foto asli agar galeri tampil maksimal.</p>
+        <div id="galeri-list"></div>
+        <button class="btn btn-kecil btn-emas" id="galeri-tambah">+ Tambah Foto</button>
+      </div>
+    </div>
+
+    <!-- ===== Jadwal ===== -->
+    <div class="panel" data-panel="jadwal">
+      <div class="card">
+        <h3>Tahun Pelajaran</h3>
+        <input type="text" id="tahun-pelajaran" placeholder="cth: 2025/2026">
+      </div>
+      <div class="card">
+        <h3>Kalender Sekolah</h3>
+        <p class="desc">Tabel kegiatan penting di halaman Jadwal. Satu baris = satu kegiatan (format: Tanggal | Kegiatan).</p>
+        <textarea id="kalender-sekolah" rows="8" placeholder="14 Juli 2025 | Awal masuk semester 1 & MPLS"></textarea>
+      </div>
+      <div class="card">
+        <h3>Jadwal Pelajaran Kelas 1–6</h3>
+        <p class="desc">Format tiap baris: <b>Hari | Jam | Mata Pelajaran</b></p>
+        <div id="jadwal-list"></div>
+      </div>
+    </div>
+
+    <!-- ===== Unduhan ===== -->
+    <div class="panel" data-panel="unduhan">
+      <div class="card">
+        <h3>Berkas Unduhan</h3>
+        <p class="desc">Tempel link berkas (bisa dari Google Drive: izinkan "siapa saja dengan link", lalu tempel tautannya).</p>
+        <div id="unduhan-list"></div>
+        <button class="btn btn-kecil btn-emas" id="unduhan-tambah">+ Tambah Berkas</button>
+      </div>
+    </div>
+
+    <!-- ===== Pengaturan ===== -->
+    <div class="panel" data-panel="pengaturan">
+      <div class="card">
+        <h3>Pendaftaran (PPDB)</h3>
+        <label class="sw" style="margin:8px 0">
+          <input type="checkbox" id="set-ppdb-aktif">
+          <span class="track"></span>
+          <span class="lbl">Buka Pendaftaran (ON = formulir tampil)</span>
+        </label>
+      </div>
+      <div class="card">
+        <h3>Tombol WhatsApp</h3>
+        <label class="sw" style="margin:8px 0">
+          <input type="checkbox" id="set-wa-aktif">
+          <span class="track"></span>
+          <span class="lbl">Tampilkan Tombol WhatsApp</span>
+        </label>
+        <label>Nomor WhatsApp (format 62…)</label>
+        <input type="text" id="set-wa-nomor" placeholder="cth: 6281234567890">
+        <label>Pesan otomatis</label>
+        <textarea id="set-wa-teks" rows="2"></textarea>
+      </div>
+      <div class="card">
+        <h3>Kontak Sekolah</h3>
+        <label>Alamat</label>
+        <textarea id="set-kontak-alamat" rows="2"></textarea>
+        <label>Email</label>
+        <input type="text" id="set-kontak-email">
+        <label>Jam layanan</label>
+        <input type="text" id="set-kontak-jam">
+      </div>
+    </div>
+  </div>
+
+  <!-- bar simpan -->
+  <div class="simpan-bar">
+    <div class="container">
+      <span class="info" id="save-info">Perubahan tersimpan di peramban sampai Anda menekan Simpan.</span>
+      <span style="display:flex;gap:10px">
+        <button class="btn btn-bahaya" id="btn-batal">Batal</button>
+        <button class="btn btn-utama" id="btn-simpan">💾 Simpan &amp; Terbitkan</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+// Panel Admin SDN 2 Klambu
+// Data konten dimuat dari /api/konten (produksi) atau data/konten.json (lokal)
+// ============================================================
+const isLocal = ["127.0.0.1","localhost"].includes(location.hostname);
+const API = "/api/konten";
+let DATA = null;
+let PWD = sessionStorage.getItem("adm-pwd") || "";
+
+function apiFetch(url, opts = {}) {
+  return fetch(url, { ...opts, headers: { "Content-Type": "application/json", "X-Admin-Password": PWD, ...(opts.headers||{}) } });
+}
+
+function toast(msg, err = false) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.className = "toast" + (err ? " err" : "");
+  t.style.display = "block";
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.style.display = "none", 3200);
+}
+
+// ---------- LOGIN ----------
+if (PWD) cobaLogin(true);
+document.getElementById("form-login").addEventListener("submit", e => {
+  e.preventDefault();
+  PWD = document.getElementById("pwd").value;
+  cobaLogin(false);
+});
+
+async function cobaLogin(otomatis) {
+  try {
+    const r = await apiFetch(API);
+    if (r.ok) {
+      DATA = await r.json();
+      masuk();
+    } else if (otomatis) {
+      PWD = "";
+    } else {
+      const j = await r.json().catch(() => ({}));
+      const err = document.getElementById("login-err");
+      err.style.display = "block";
+      err.textContent = j.error || "Password salah.";
+    }
+  } catch {
+    // mode lokal: tanpa API — langsung pakai file JSON
+    const r = await fetch("data/konten.json");
+    DATA = await r.json();
+    masuk();
+  }
+}
+
+function masuk() {
+  sessionStorage.setItem("adm-pwd", PWD);
+  document.getElementById("login-wrap").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  isiForm();
+}
+
+document.getElementById("btn-keluar").addEventListener("click", () => {
+  sessionStorage.removeItem("adm-pwd");
+  location.reload();
+});
+
+// ---------- TABS ----------
+document.querySelectorAll("#tabs button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll("#tabs button").forEach(x => x.classList.remove("active"));
+  document.querySelectorAll(".panel").forEach(x => x.classList.remove("active"));
+  b.classList.add("active");
+  document.querySelector(`[data-panel="${b.dataset.tab}"]`).classList.add("active");
+}));
+
+// ---------- helper ----------
+function val(sel, v) { const e = document.querySelector(sel); if (e && v !== undefined) e.value = v; return e ? e.value : ""; }
+function esc(s) { const d = document.createElement("div"); d.textContent = s ?? ""; return d.innerHTML; }
+
+async function uploadFoto(file) {
+  const dataUrl = await new Promise((ok, no) => {
+    const r = new FileReader();
+    r.onload = () => ok(r.result);
+    r.onerror = no;
+    r.readAsDataURL(file);
+  });
+  if (dataUrl.length > 6_000_000) throw new Error("Foto terlalu besar (maks ±3MB). Kompres dulu.");
+  if (isLocal) return dataUrl; // lokal: preview saja
+  const r = await apiFetch(API + "?act=upload", { method: "POST", body: JSON.stringify({ name: file.name, dataUrl }) });
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || "Upload gagal.");
+  return j.url;
+}
+
+function barisFoto(inputId, url, onChange) {
+  return { inputId, url, onChange };
+}
+
+// ================= ISI FORM =================
+function isiForm() {
+  val("#visi", DATA.visi);
+  val("#misi", (DATA.misi || []).join("\n"));
+  val("#profil-0", (DATA.profilTeks || [])[0] || "");
+  val("#profil-1", (DATA.profilTeks || [])[1] || "");
+  val("#sejarah", DATA.sejarah);
+  val("#kepsek-nama", DATA.kepsek?.nama);
+  val("#kepsek-jabatan", DATA.kepsek?.jabatan);
+  val("#kepsek-kutipan", DATA.kepsek?.kutipan);
+  val("#kepsek-s1", DATA.kepsek?.sambutan1);
+  val("#kepsek-s2", DATA.kepsek?.sambutan2);
+  setFotoPrev("kepsek-prev", DATA.kepsek?.foto);
+  val("#tahun-pelajaran", DATA.pengaturan?.tahunPelajaran);
+  val("#kalender-sekolah", (DATA.kalenderSekolah || []).map(k => `${k.tanggal} | ${k.kegiatan}`).join("\n"));
+  // pengaturan
+  document.querySelector("#set-ppdb-aktif").checked = DATA.pengaturan?.ppdbAktif !== false;
+  document.querySelector("#set-wa-aktif").checked = !!DATA.pengaturan?.waAktif;
+  val("#set-wa-nomor", DATA.pengaturan?.waNomor || "");
+  val("#set-wa-teks", DATA.pengaturan?.waTeks || "");
+  val("#set-kontak-alamat", DATA.kontak?.alamat);
+  val("#set-kontak-email", DATA.kontak?.email);
+  val("#set-kontak-jam", DATA.kontak?.jam);
+  renderGuru(); renderProgram(); renderEkskul(); renderBerita(); renderGaleri(); renderUnduhan(); renderJadwal();
+  muatPendaftar();
+}
+
+function setFotoPrev(id, foto, inisial) {
+  const p = document.getElementById(id);
+  if (!p) return;
+  p.innerHTML = foto ? `<img src="${esc(foto)}" alt="foto">` : (inisial || "📷");
+}
+
+// ================= RENDER DAFTAR ITEM =================
+function fotoBox(id, foto, inisial) {
+  return `<div class="foto-prev" id="${id}" style="cursor:pointer" onclick="document.getElementById('file-${id}').click()">${foto ? `<img src="${esc(foto)}">` : (inisial || "📷")}</div>
+  <input type="file" id="file-${id}" accept="image/*" style="display:none" data-prev="${id}">`;
+}
+
+// ---------- GURU ----------
+function renderGuru() {
+  const wrap = document.getElementById("guru-list");
+  wrap.replaceChildren();
+  (DATA.guru || []).forEach((g, i) => {
+    const row = document.createElement("div");
+    row.className = "item-row";
+    row.innerHTML = `
+      <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+        ${fotoBox("guru-" + i, g.foto, g.inisial)}
+        <div style="flex:1;min-width:200px">
+          <label style="margin-top:0">Nama</label>
+          <input type="text" data-f="nama" value="${esc(g.nama)}">
+          <label>Peran</label>
+          <input type="text" data-f="peran" value="${esc(g.peran)}">
+          <label>Inisial (jika tanpa foto)</label>
+          <input type="text" data-f="inisial" value="${esc(g.inisial)}" maxlength="4">
+        </div>
+        <button class="btn btn-kecil btn-bahaya" data-del="${i}">Hapus</button>
+      </div>`;
+    wrap.append(row);
+    row.querySelector(`#file-guru-${i}`).addEventListener("change", async e => {
+      try {
+        const url = await uploadFoto(e.target.files[0]);
+        g.foto = url;
+        setFotoPrev("guru-" + i, url);
+        toast("Foto siap — jangan lupa Simpan & Terbitkan.");
+      } catch (err) { toast(err.message, true); }
+    });
+    row.querySelectorAll("[data-f]").forEach(inp => inp.addEventListener("input", () => { g[inp.dataset.f] = inp.value; }));
+    row.querySelector("[data-del]").addEventListener("click", () => { DATA.guru.splice(i, 1); renderGuru(); });
+  });
+}
+document.getElementById("guru-tambah").addEventListener("click", () => {
+  DATA.guru.push({ nama: "Guru Baru", peran: "Wali Kelas", inisial: "G", foto: "" });
+  renderGuru();
+});
+
+// ---------- PROGRAM ----------
+function renderProgram() {
+  const wrap = document.getElementById("program-list");
+  wrap.replaceChildren();
+  (DATA.program || []).forEach((p, i) => {
+    const row = document.createElement("div");
+    row.className = "item-row";
+    row.innerHTML = `
+      <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+        ${fotoBox("prog-" + i, p.foto, p.ikon || "★")}
+        <div style="flex:1;min-width:200px">
+          <label style="margin-top:0">Ikon emoji</label>
+          <input type="text" data-f="ikon" value="${esc(p.ikon)}" maxlength="4">
+          <label>Judul</label>
+          <input type="text" data-f="judul" value="${esc(p.judul)}">
+          <label>Teks</label>
+          <textarea data-f="teks" rows="2">${esc(p.teks)}</textarea>
+          <label>Tanda (cth: √ Berbasis karakter)</label>
+          <input type="text" data-f="tanda" value="${esc(p.tanda)}">
+        </div>
+        <button class="btn btn-kecil btn-bahaya" data-del="${i}">Hapus</button>
+      </div>`;
+    wrap.append(row);
+    row.querySelector(`#file-prog-${i}`).addEventListener("change", async e => {
+      try {
+        const url = await uploadFoto(e.target.files[0]);
+        p.foto = url;
+        setFotoPrev("prog-" + i, url);
+        toast("Foto siap — jangan lupa Simpan & Terbitkan.");
+      } catch (err) { toast(err.message, true); }
+    });
+    row.querySelectorAll("[data-f]").forEach(inp => inp.addEventListener("input", () => { p[inp.dataset.f] = inp.value; }));
+    row.querySelector("[data-del]").addEventListener("click", () => { DATA.program.splice(i, 1); renderProgram(); });
+  });
+}
+document.getElementById("program-tambah").addEventListener("click", () => {
+  DATA.program.push({ ikon: "⭐", judul: "Program Baru", teks: "Deskripsi program.", tanda: "", foto: "" });
+  renderProgram();
+});
+
+// ---------- EKSKUL ----------
+function renderEkskul() {
+  const wrap = document.getElementById("ekskul-list");
+  wrap.replaceChildren();
+  (DATA.ekskul || []).forEach((x, i) => {
+    const row = document.createElement("div");
+    row.className = "item-row";
+    row.innerHTML = `
+      <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+        ${fotoBox("eks-" + i, x.foto, x.ikon || "★")}
+        <div style="flex:1;min-width:200px">
+          <label style="margin-top:0">Ikon emoji</label>
+          <input type="text" data-f="ikon" value="${esc(x.ikon)}" maxlength="4">
+          <label>Judul</label>
+          <input type="text" data-f="judul" value="${esc(x.judul)}">
+          <label>Teks</label>
+          <textarea data-f="teks" rows="2">${esc(x.teks)}</textarea>
+        </div>
+        <button class="btn btn-kecil btn-bahaya" data-del="${i}">Hapus</button>
+      </div>`;
+    wrap.append(row);
+    row.querySelector(`#file-eks-${i}`).addEventListener("change", async e => {
+      try {
+        const url = await uploadFoto(e.target.files[0]);
+        x.foto = url;
+        setFotoPrev("eks-" + i, url);
+        toast("Foto siap — jangan lupa Simpan & Terbitkan.");
+      } catch (err) { toast(err.message, true); }
+    });
+    row.querySelectorAll("[data-f]").forEach(inp => inp.addEventListener("input", () => { x[inp.dataset.f] = inp.value; }));
+    row.querySelector("[data-del]").addEventListener("click", () => { DATA.ekskul.splice(i, 1); renderEkskul(); });
+  });
+}
+document.getElementById("ekskul-tambah").addEventListener("click", () => {
+  DATA.ekskul.push({ ikon: "⭐", judul: "Ekskul Baru", teks: "Deskripsi kegiatan.", foto: "" });
+  renderEkskul();
+});
+
+// ---------- BERITA ----------
+function renderBerita() {
+  const wrap = document.getElementById("berita-list");
+  wrap.replaceChildren();
+  (DATA.berita || []).forEach((b, i) => {
+    const row = document.createElement("div");
+    row.className = "item-row";
+    row.innerHTML = `
+      <div class="head">
+        <b>${esc(b.judul) || "(tanpa judul)"}</b>
+        <button class="btn btn-kecil btn-bahaya" data-del="${i}">Hapus</button>
+      </div>
+      <div class="grid2">
+        <div>
+          <label>Judul</label>
+          <input type="text" data-f="judul" value="${esc(b.judul)}">
+          <label>Kategori</label>
+          <input type="text" data-f="kategori" value="${esc(b.kategori)}">
+          <label>Tanggal</label>
+          <input type="date" data-f="tanggal" value="${esc(b.tanggal)}">
+        </div>
+        <div>
+          <label>Ikon emoji</label>
+          <input type="text" data-f="emoji" value="${esc(b.emoji)}" maxlength="4">
+          <label>Isi</label>
+          <textarea data-f="isi" rows="4">${esc(b.isi)}</textarea>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center;margin-top:10px">
+        ${fotoBox("brt-" + i, b.foto, b.emoji)}
+        <p style="font-size:.78rem;color:var(--mute)">Foto berita (opsional)</p>
+      </div>`;
+    wrap.append(row);
+    row.querySelector(`#file-brt-${i}`).addEventListener("change", async e => {
+      try {
+        const url = await uploadFoto(e.target.files[0]);
+        b.foto = url;
+        setFotoPrev("brt-" + i, url);
+        toast("Foto siap — jangan lupa Simpan & Terbitkan.");
+      } catch (err) { toast(err.message, true); }
+    });
+    row.querySelectorAll("[data-f]").forEach(inp => inp.addEventListener("input", () => { b[inp.dataset.f] = inp.value; }));
+    row.querySelector("[data-del]").addEventListener("click", () => { DATA.berita.splice(i, 1); renderBerita(); });
+  });
+}
+document.getElementById("berita-tambah").addEventListener("click", () => {
+  DATA.berita.unshift({ id: "b" + Date.now(), kategori: "Berita", judul: "Judul Berita Baru", isi: "Isi berita…", tanggal: new Date().toISOString().slice(0, 10), emoji: "📰", grad: "1", foto: "" });
+  renderBerita();
+});
+
+// ---------- GALERI ----------
+function renderGaleri() {
+  const wrap = document.getElementById("galeri-list");
+  wrap.replaceChildren();
+  (DATA.galeri || []).forEach((g, i) => {
+    const row = document.createElement("div");
+    row.className = "item-row";
+    row.innerHTML = `
+      <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+        ${fotoBox("gal-" + i, g.foto, g.emoji)}
+        <div style="flex:1;min-width:200px">
+          <label style="margin-top:0">Judul</label>
+          <input type="text" data-f="judul" value="${esc(g.judul)}">
+          <label>Deskripsi</label>
+          <textarea data-f="deskripsi" rows="2">${esc(g.deskripsi)}</textarea>
+          <label>Ikon emoji (jika tanpa foto)</label>
+          <input type="text" data-f="emoji" value="${esc(g.emoji)}" maxlength="4">
+        </div>
+        <button class="btn btn-kecil btn-bahaya" data-del="${i}">Hapus</button>
+      </div>`;
+    wrap.append(row);
+    row.querySelector(`#file-gal-${i}`).addEventListener("change", async e => {
+      try {
+        const url = await uploadFoto(e.target.files[0]);
+        g.foto = url;
+        setFotoPrev("gal-" + i, url);
+        toast("Foto siap — jangan lupa Simpan & Terbitkan.");
+      } catch (err) { toast(err.message, true); }
+    });
+    row.querySelectorAll("[data-f]").forEach(inp => inp.addEventListener("input", () => { g[inp.dataset.f] = inp.value; }));
+    row.querySelector("[data-del]").addEventListener("click", () => { DATA.galeri.splice(i, 1); renderGaleri(); });
+  });
+}
+document.getElementById("galeri-tambah").addEventListener("click", () => {
+  DATA.galeri.push({ id: "g" + Date.now(), judul: "Foto Baru", deskripsi: "Keterangan foto.", emoji: "📷", grad: "1", foto: "" });
+  renderGaleri();
+});
+
+// ---------- UNDUHAN ----------
+function renderUnduhan() {
+  const wrap = document.getElementById("unduhan-list");
+  wrap.replaceChildren();
+  (DATA.unduhan || []).forEach((u, i) => {
+    const row = document.createElement("div");
+    row.className = "item-row";
+    row.innerHTML = `
+      <div class="head">
+        <b>${esc(u.judul)}</b>
+        <button class="btn btn-kecil btn-bahaya" data-del="${i}">Hapus</button>
+      </div>
+      <div class="grid2">
+        <div>
+          <label>Judul</label>
+          <input type="text" data-f="judul" value="${esc(u.judul)}">
+        </div>
+        <div>
+          <label>Link berkas</label>
+          <input type="text" data-f="url" value="${esc(u.url)}" placeholder="https://…">
+        </div>
+      </div>
+      <label>Deskripsi</label>
+      <textarea data-f="deskripsi" rows="2">${esc(u.deskripsi)}</textarea>`;
+    wrap.append(row);
+    row.querySelectorAll("[data-f]").forEach(inp => inp.addEventListener("input", () => { u[inp.dataset.f] = inp.value; }));
+    row.querySelector("[data-del]").addEventListener("click", () => { DATA.unduhan.splice(i, 1); renderUnduhan(); });
+  });
+}
+document.getElementById("unduhan-tambah").addEventListener("click", () => {
+  DATA.unduhan.push({ judul: "Berkas Baru", deskripsi: "Keterangan.", url: "" });
+  renderUnduhan();
+});
+
+// ---------- JADWAL ----------
+function renderJadwal() {
+  const wrap = document.getElementById("jadwal-list");
+  wrap.replaceChildren();
+  const jadwal = DATA.jadwal || {};
+  Object.keys(jadwal).sort().forEach(k => {
+    const box = document.createElement("div");
+    box.className = "item-row";
+    box.innerHTML = `
+      <div class="head">
+        <b>Kelas ${esc(k)}</b>
+        <span style="display:flex;gap:8px">
+          <button class="btn btn-kecil btn-emas" data-add="${k}">+ Baris</button>
+          <button class="btn btn-kecil btn-bahaya" data-del-kelas="${k}">Hapus Kelas</button>
+        </span>
+      </div>
+      <textarea rows="8" data-jadwal="${k}" style="margin-top:10px">${jadwal[k].map(r => `${r.h} | ${r.j} | ${r.k}`).join("\n")}</textarea>
+      <p style="font-size:.76rem;color:var(--mute);margin-top:6px">Format: Hari | Jam | Mata Pelajaran (satu baris satu jadwal)</p>`;
+    wrap.append(box);
+    box.querySelector(`[data-jadwal="${k}"]`).addEventListener("input", e => {
+      jadwal[k] = e.target.value.split("\n").filter(l => l.trim()).map(l => {
+        const [h, j, ...kx] = l.split("|").map(s => s.trim());
+        return { h: h || "", j: j || "", k: kx.join(" | ") || "" };
+      });
+    });
+    box.querySelector("[data-add]").addEventListener("click", () => {
+      jadwal[k].push({ h: "Senin", j: "07.00–08.00", k: "Mapel" });
+      renderJadwal();
+    });
+    box.querySelector("[data-del-kelas]").addEventListener("click", () => { delete jadwal[k]; renderJadwal(); });
+  });
+}
+
+// ---------- PENDAFTAR PPDB ----------
+async function muatPendaftar() {
+  const wrap = document.getElementById("ppdb-list");
+  wrap.innerHTML = "<p style='color:var(--mute)'>Memuat…</p>";
+  if (isLocal) {
+    wrap.innerHTML = "<p class='desc'>Mode lokal: daftar pendaftar hanya tersedia di produksi (Vercel).</p>";
+    return;
+  }
+  try {
+    const r = await apiFetch(API + "?file=pendaftar");
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "Gagal memuat.");
+    const items = j.items || [];
+    if (!items.length) { wrap.innerHTML = "<p class='desc'>Belum ada pendaftar.</p>"; return; }
+    wrap.replaceChildren();
+    items.slice().reverse().forEach(p => {
+      const row = document.createElement("div");
+      row.className = "item-row";
+      const stClass = p.status === "Diterima" ? "st-terima" : p.status === "Ditolak" ? "st-tolak" : "st-antrian";
+      row.innerHTML = `
+        <div class="head">
+          <b>${esc(p.nomor)} — ${esc(p.nama)}</b>
+          <span style="display:flex;gap:8px;align-items:center">
+            <span class="status ${stClass}">${esc(p.status)}</span>
+            <select data-st="${esc(p.nomor)}" style="width:auto;padding:6px 10px">
+              <option>Menunggu verifikasi</option>
+              <option>Diterima</option>
+              <option>Ditolak</option>
+            </select>
+          </span>
+        </div>
+        <p style="font-size:.86rem;margin-top:8px"></p>
+        <div class="grid3" style="font-size:.86rem">
+          <div>👤 ${esc(p.jk)}</div>
+          <div>🍼 ${esc(p.ttl)}</div>
+          <div>📱 ${esc(p.wa)}</div>
+          <div>🏫 ${esc(p.asal || "—" )}</div>
+          <div style="grid-column:1/-1">🏠 ${esc(p.alamat)}</div>
+        </div>`;
+      row.querySelector(`select[data-st="${p.nomor}"]`).value = p.status;
+      row.querySelector("select").addEventListener("change", async e => {
+        const r2 = await apiFetch(API + "?act=status", { method: "POST", body: JSON.stringify({ nomor: p.nomor, status: e.target.value }) });
+        const j2 = await r2.json();
+        if (r2.ok) { toast(`Status ${p.nomor} → ${e.target.value}. Halaman publik diperbarui otomatis.`); muatPendaftar(); }
+        else toast(j2.error || "Gagal", true);
+      });
+      wrap.append(row);
+    });
+  } catch (e) {
+    wrap.innerHTML = `<p style="color:var(--merah)">${esc(e.message)}</p>`;
+  }
+}
+document.getElementById("ppdb-refresh").addEventListener("click", muatPendaftar);
+document.getElementById("ppdb-unduh").addEventListener("click", async () => {
+  if (isLocal) return toast("Tersedia di produksi.", true);
+  try {
+    const r = await apiFetch(API + "?file=pendaftar");
+    const j = await r.json();
+    const items = j.items || [];
+    const csv = ["nomor,nama,jk,ttl,ortu,wa,alamat,asal,status,waktu"]
+      .concat(items.map(p => [p.nomor, p.nama, p.jk, p.ttl, p.ortu, p.wa, p.alamat, p.asal, p.status, p.waktu].map(x => `"${String(x ?? "").replace(/"/g, '""')}"`).join(",")))
+      .join("\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    a.download = "pendaftar-ppdb.csv";
+    a.click();
+  } catch (e) { toast(e.message, true); }
+});
+
+// ---------- SIMPAN ----------
+document.getElementById("btn-simpan").addEventListener("click", async () => {
+  // kumpulkan form tunggal
+  DATA.visi = val("#visi");
+  DATA.misi = val("#misi").split("\n").filter(s => s.trim());
+  DATA.profilTeks = [val("#profil-0"), val("#profil-1")];
+  DATA.sejarah = val("#sejarah");
+  DATA.kepsek = {
+    ...DATA.kepsek,
+    nama: val("#kepsek-nama"), jabatan: val("#kepsek-jabatan"),
+    kutipan: val("#kepsek-kutipan"), sambutan1: val("#kepsek-s1"), sambutan2: val("#kepsek-s2"),
+    foto: DATA.kepsek?.foto || ""
+  };
+  DATA.pengaturan = {
+    ...DATA.pengaturan,
+    ppdbAktif: document.querySelector("#set-ppdb-aktif").checked,
+    waAktif: document.querySelector("#set-wa-aktif").checked,
+    waNomor: val("#set-wa-nomor"),
+    waTeks: val("#set-wa-teks"),
+    tahunPelajaran: val("#tahun-pelajaran")
+  };
+  DATA.kontak = { alamat: val("#set-kontak-alamat"), email: val("#set-kontak-email"), jam: val("#set-kontak-jam") };
+  DATA.kalenderSekolah = val("#kalender-sekolah").split("\n").filter(l => l.trim()).map(l => {
+    const [t, ...kx] = l.split("|").map(s => s.trim());
+    return { tanggal: t || "", kegiatan: kx.join(" | ") || "" };
+  });
+
+  // foto kepsek dari file input utama
+  const kf = document.getElementById("kepsek-foto");
+  try {
+    if (kf && kf.files[0]) {
+      const url = await uploadFoto(kf.files[0]);
+      DATA.kepsek.foto = url;
+    }
+  } catch (e) { return toast(e.message, true); }
+
+  if (isLocal) {
+    localStorage.setItem("konten-lokal", JSON.stringify(DATA));
+    return toast("Mode lokal: tersimpan sementara di peramban saja.");
+  }
+  try {
+    document.getElementById("btn-simpan").disabled = true;
+    document.getElementById("save-info").textContent = "Menyimpan…";
+    const r = await apiFetch(API + "?act=simpan", { method: "POST", body: JSON.stringify({ data: DATA }) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "Gagal menyimpan.");
+    document.getElementById("save-info").textContent = "✓ Tersimpan & diterbitkan. Situs diperbarui dalam ±1 menit.";
+    toast("✓ Berhasil disimpan! Website otomatis diperbarui.");
+  } catch (e) {
+    toast(e.message, true);
+    document.getElementById("save-info").textContent = "Perubahan tersimpan di peramban sampai Anda menekan Simpan.";
+  } finally {
+    document.getElementById("btn-simpan").disabled = false;
+  }
+});
+
+document.getElementById("btn-batal").addEventListener("click", () => { isiForm(); toast("Formulir dikembalikan."); });
+
+// foto kepsek preview segera
+document.getElementById("kepsek-foto")?.addEventListener("change", e => {
+  if (e.target.files[0]) setFotoPrev("kepsek-prev", URL.createObjectURL(e.target.files[0]));
+});
+</script>
+</body>
+</html>

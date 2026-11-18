@@ -212,14 +212,24 @@
     const ppdbOn = s.ppdbAktif !== false;
     document.querySelectorAll("[data-ppdb-gate]").forEach(n => (n.style.display = ppdbOn ? "" : "none"));
     document.querySelectorAll("[data-ppdb-tutup]").forEach(n => (n.style.display = ppdbOn ? "none" : ""));
+    // tombol PPDB nav ikut ON/OFF
+    document.querySelectorAll("a.btn-ppdb").forEach(a => (a.style.display = ppdbOn ? "" : "none"));
     // WhatsApp
     const waOn = s.waAktif && s.waNomor;
-    document.querySelectorAll("[data-wa-btn]").forEach(a => {
-      if (waOn) {
-        a.style.display = "";
-        a.href = `https://wa.me/${String(s.waNomor).replace(/[^0-9]/g, "")}?text=${encodeURIComponent(s.waTeks || "Assalamualaikum, saya ingin bertanya.")}`;
-      } else a.style.display = "none";
-    });
+    let fab = document.getElementById("wa-fab");
+    if (waOn) {
+      if (!fab) {
+        fab = document.createElement("a");
+        fab.id = "wa-fab";
+        fab.target = "_blank";
+        fab.rel = "noopener";
+        fab.setAttribute("aria-label", "Chat WhatsApp");
+        fab.style.cssText = "position:fixed;bottom:18px;right:18px;z-index:80;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-weight:800;padding:12px 16px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.28);text-decoration:none;font-size:.92rem";
+        fab.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.06c-.25.7-1.45 1.34-2 1.38-.55.05-1.05.24-3.52-.73-2.98-1.17-4.85-4.26-5-4.46-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37h.56c.18 0 .42-.07.65.5.24.59.81 2.02.88 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5l-.44.51c-.15.15-.3.31-.13.61.17.3.75 1.24 1.61 2.01 1.1.98 2.03 1.29 2.33 1.44.3.15.47.12.65-.08.17-.2.75-.87.94-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 1.99.95.3.15.49.22.56.35.07.12.07.72-.18 1.42Z"/></svg> Chat WhatsApp';
+      }
+      fab.href = `https://wa.me/${String(s.waNomor).replace(/[^0-9]/g, "")}?text=${encodeURIComponent(s.waTeks || "Assalamualaikum, saya ingin bertanya.")}`;
+      if (!fab.isConnected) document.body.append(fab);
+    } else if (fab) fab.remove();
   }
 
   async function muat() {
